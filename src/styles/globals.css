@@ -1,6 +1,10 @@
 :root {
 	--background: #ffffff;
 	--foreground: #171717;
+	--primary: #14716b;
+	--black: #292522;
+	--text-gray: #5b5e5f;
+	--bottom-gray: #f6f5f4;
 }
 
 html,

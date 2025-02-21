@@ -1,0 +1,33 @@
+.lists {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-end;
+	gap: 50px;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+}
+
+.list_title {
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 24px;
+	letter-spacing: 0%;
+	margin-bottom: 40px;
+	color: var(--black);
+}
+
+.list_link {
+	margin-top: 20px;
+	color: var(--text-gray);
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	letter-spacing: 0%;
+}
+
+.list_link:nth-child(2) {
+	margin-top: 0px;
+}
