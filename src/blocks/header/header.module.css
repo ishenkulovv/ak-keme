@@ -1,0 +1,12 @@
+.header {
+	height: 100vh;
+	position: relative;
+}
+
+.sky {
+	display: block;
+	position: sticky;
+	top: 10px;
+	width: 100%;
+	height: 828px;
+}

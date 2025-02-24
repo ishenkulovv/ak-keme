@@ -1,0 +1,46 @@
+.nav {
+	padding: 12px;
+	background: rgba(var(--light), 25%);
+	position: relative;
+	transition: all 0.3s;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	transition: all 0.3s;
+	backdrop-filter: blur(64px);
+	z-index: 55;
+}
+
+.space {
+	height: 76px;
+	background: var(--light);
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.list {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	gap: 32px;
+}
+
+.link {
+	font-family: Manrope;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0%;
+	color: var(--black);
+}
+
+.button {
+	max-width: 166px;
+	width: 100%;
+}

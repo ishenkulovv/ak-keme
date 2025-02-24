@@ -1,0 +1,31 @@
+.input {
+	padding: 14px 10px;
+	width: 100%;
+	border: none;
+	outline: none;
+	border-bottom: 1px solid rgba(216, 218, 222, 1);
+	transition: all 0.3s;
+}
+
+.input:focus {
+	border-bottom-color: var(--primary);
+}
+
+.placeholder {
+	display: block;
+	font-family: Manrope;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 21px;
+	letter-spacing: 0%;
+	color: rgba(114, 117, 118, 1);
+	transform: translateY(31px) translateX(9.2px);
+	transition: all 0.3s;
+	cursor: text;
+	width: max-content;
+	background-color: transparent;
+}
+
+.focused {
+	transform: translate(0px);
+}

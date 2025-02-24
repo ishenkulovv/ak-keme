@@ -1,0 +1,25 @@
+.button {
+	outline: none;
+	border: none;
+	background-color: var(--primary);
+	color: var(--light);
+	font-family: Manrope;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0%;
+	text-align: center;
+	width: 100%;
+	padding: 8px;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.button:hover {
+	transform: translateY(-3px);
+}
+
+.button:active {
+	transform: translateY(0px);
+}

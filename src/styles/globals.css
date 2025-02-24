@@ -1,5 +1,29 @@
+@font-face {
+	font-family: 'Grtsk Tera';
+	src: url('/fonts/GrtskTera-Medium.woff2') format('woff2'),
+		url('/fonts/GrtskTera-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Grtsk Tera';
+	src: url('/fonts/GrtskTera-Bold.woff2') format('woff2'),
+		url('/fonts/GrtskTera-Bold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Manrope', sans-serif;
+}
+
 :root {
-	--background: #ffffff;
+	--light: #ffffff;
 	--foreground: #171717;
 	--primary: #14716b;
 	--black: #292522;
@@ -15,7 +39,7 @@ body {
 
 body {
 	color: var(--foreground);
-	background: var(--background);
+	background: var(--light);
 	font-family: Arial, Helvetica, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;

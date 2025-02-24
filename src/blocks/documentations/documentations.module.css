@@ -1,0 +1,54 @@
+.documentations {
+	background-color: rgba(246, 245, 244, 1);
+	padding: 80px 16px;
+}
+.title {
+	font-family: 'Grtsk Tera';
+	font-weight: 500;
+	font-size: 48px;
+	line-height: 62.4px;
+	letter-spacing: 0%;
+	margin-bottom: 64px;
+	color: var(--black);
+}
+
+.documents {
+	display: flex;
+	align-items: stretch;
+	justify-content: space-between;
+	gap: 16px;
+}
+
+.block {
+	background-color: var(--light);
+	padding: 16px;
+	border-radius: 8px;
+	max-width: 288px;
+	width: 100%;
+}
+
+.doc_title {
+	font-family: Manrope;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 21px;
+	letter-spacing: 0%;
+	margin-bottom: 2px;
+	color: rgba(41, 37, 34, 1);
+}
+
+.doc_date {
+	font-family: Manrope;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 21px;
+	letter-spacing: 0%;
+	margin-bottom: 10px;
+	color: rgba(91, 94, 95, 1);
+}
+
+.doc_link {
+	display: flex;
+	justify-content: flex-end;
+	cursor: pointer;
+}
