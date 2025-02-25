@@ -1,0 +1,17 @@
+.title {
+	font-family: Grtsk Tera;
+	font-weight: 500;
+	font-size: 48px;
+	line-height: 62.4px;
+	letter-spacing: 0%;
+	color: var(--black);
+}
+.video {
+	width: 100%;
+	height: 484px;
+}
+
+.video iframe {
+	width: 100%;
+	height: 100%;
+}
