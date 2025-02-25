@@ -29,6 +29,7 @@ body {
 	--black: #292522;
 	--text-gray: #5b5e5f;
 	--bottom-gray: #f6f5f4;
+	--stroke-gray: rgba(225, 225, 225, 1);
 }
 
 html,
