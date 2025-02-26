@@ -8,7 +8,12 @@ import Image from 'next/image';
 import styles from './slider.module.css';
 import clsx from 'clsx';
 
-function Slider() {
+interface SliderProps {
+	buttonPosition?: 'bottom' | 'side';
+	slidesPerView?: number;
+}
+
+function Slider({ buttonPosition = 'bottom', slidesPerView = 1 }: SliderProps) {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const sliderRef = React.useRef<any>(null);
 	const [isBeginning, setIsBeginning] = React.useState(true);
@@ -44,7 +49,12 @@ function Slider() {
 
 	return (
 		<div className={styles.main}>
-			<Swiper ref={sliderRef} className={styles.swiper}>
+			<Swiper
+				slidesPerView={slidesPerView}
+				spaceBetween={20}
+				ref={sliderRef}
+				className={styles.swiper}
+			>
 				<SwiperSlide>
 					<Image
 						src='/images/parking-1.png'
@@ -86,6 +96,8 @@ function Slider() {
 				className={clsx(
 					styles.button,
 					styles.prev,
+					buttonPosition === 'bottom' && styles.bottom,
+					buttonPosition === 'side' && styles.side,
 					isBeginning && styles.disabled
 				)}
 				onClick={!isBeginning ? handlePrev : undefined}
@@ -93,7 +105,13 @@ function Slider() {
 				<Image src='/icons/slider-prev.svg' alt='Prev' width={16} height={16} />
 			</div>
 			<div
-				className={clsx(styles.button, styles.next, isEnd && styles.disabled)}
+				className={clsx(
+					styles.button,
+					buttonPosition === 'bottom' && styles.bottom,
+					buttonPosition === 'side' && styles.side,
+					styles.next,
+					isEnd && styles.disabled
+				)}
 				onClick={!isEnd ? handleNext : undefined}
 			>
 				<Image src='/icons/slider-next.svg' alt='Prev' width={16} height={16} />

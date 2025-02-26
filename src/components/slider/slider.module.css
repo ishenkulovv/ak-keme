@@ -7,6 +7,7 @@
 	max-height: 680px;
 	width: 100%;
 	object-fit: cover;
+	border-radius: 8px;
 }
 
 .button {
@@ -25,12 +26,25 @@
 	cursor: pointer;
 }
 
-.prev {
+.side.prev {
+	top: 50%;
+	transform: translateY(-50%);
+	left: 30px;
+}
+
+.side.next {
+	top: 50%;
+	transform: translateY(-50%);
+	right: 30px;
+	left: auto;
+}
+
+.bottom.prev {
 	left: 48%;
 	transform: translate(-50%);
 }
 
-.next {
+.bottom.next {
 	left: 52%;
 	transform: translate(-50%);
 }

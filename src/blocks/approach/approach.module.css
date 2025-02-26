@@ -1,0 +1,30 @@
+.main {
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+.title {
+	font-family: Grtsk Tera;
+	font-weight: 500;
+	font-size: 48px;
+	line-height: 62.4px;
+	letter-spacing: 0%;
+	text-align: center;
+	color: var(--black);
+}
+.description {
+	font-family: Manrope;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	letter-spacing: 0%;
+	text-align: center;
+	color: var(--text-gray);
+	max-width: 700px;
+	margin: 0px auto;
+	margin-top: 48px;
+}
+
+.slider {
+	margin-top: 80px;
+	padding: 0px 10px;
+}

@@ -1,4 +1,5 @@
 import {
+	Approach,
 	ConstructionProgress,
 	Contact,
 	Documentations,
@@ -14,6 +15,7 @@ export default function Home() {
 		<div className={styles.page}>
 			<Navigation />
 			<Header />
+			<Approach />
 			<Parking />
 			<ConstructionProgress />
 			<Documentations />
