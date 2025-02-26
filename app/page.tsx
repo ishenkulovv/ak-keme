@@ -4,6 +4,7 @@ import {
 	Documentations,
 	Footer,
 	Header,
+	Parking,
 } from '@/src/blocks';
 import styles from './page.module.css';
 import { Navigation } from '@/src/components';
@@ -13,6 +14,7 @@ export default function Home() {
 		<div className={styles.page}>
 			<Navigation />
 			<Header />
+			<Parking />
 			<ConstructionProgress />
 			<Documentations />
 			<Contact />

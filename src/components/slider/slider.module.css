@@ -1,0 +1,42 @@
+.main,
+.swiper {
+	position: relative;
+}
+
+.image {
+	max-height: 680px;
+	width: 100%;
+	max-width: 1420px;
+	object-fit: cover;
+}
+
+.button {
+	position: absolute;
+	bottom: 40px;
+	left: 0px;
+	z-index: 5;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 1px solid rgba(208, 209, 209, 1);
+	background-color: var(--light);
+	cursor: pointer;
+}
+
+.prev {
+	left: 48%;
+	transform: translate(-50%);
+}
+
+.next {
+	left: 52%;
+	transform: translate(-50%);
+}
+
+.disabled {
+	cursor: auto;
+	opacity: 0.7;
+}
