@@ -11,9 +11,16 @@ import clsx from 'clsx';
 interface SliderProps {
 	buttonPosition?: 'bottom' | 'side';
 	slidesPerView?: number;
+	centeredSlides?: boolean;
+	loop?: boolean;
 }
 
-function Slider({ buttonPosition = 'bottom', slidesPerView = 1 }: SliderProps) {
+function Slider({
+	buttonPosition = 'bottom',
+	slidesPerView = 1,
+	centeredSlides = false,
+	loop = false,
+}: SliderProps) {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const sliderRef = React.useRef<any>(null);
 	const [isBeginning, setIsBeginning] = React.useState(true);
@@ -54,6 +61,11 @@ function Slider({ buttonPosition = 'bottom', slidesPerView = 1 }: SliderProps) {
 				spaceBetween={20}
 				ref={sliderRef}
 				className={styles.swiper}
+				loop={loop}
+				centeredSlides={centeredSlides}
+				coverflowEffect={{
+					stretch: 100,
+				}}
 			>
 				<SwiperSlide>
 					<Image

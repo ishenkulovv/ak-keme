@@ -1,4 +1,7 @@
 import Header from './header/Header';
+import Hero from './hero/Hero';
+import Philosophy from './philosophy/Philosophy';
+import DesignConcept from './design_concept/DesignConcept';
 import Approach from './approach/Approach';
 import Parking from './parking/Parking';
 import ConstructionProgress from './contruction_progress/ContructionProgress';
@@ -8,6 +11,9 @@ import Footer from './footer/Footer';
 
 export {
 	Header,
+	Hero,
+	Philosophy,
+	DesignConcept,
 	Approach,
 	Parking,
 	ConstructionProgress,
