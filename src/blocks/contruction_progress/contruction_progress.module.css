@@ -1,5 +1,8 @@
 .main {
 	padding: 120px 0px;
+	background-color: var(--light);
+	position: relative;
+	z-index: 2;
 }
 
 .title {
