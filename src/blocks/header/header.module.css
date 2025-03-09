@@ -6,6 +6,8 @@
 	height: 828px;
 	overflow: hidden;
 	position: relative;
+	position: fixed;
+	z-index: 2;
 }
 .sky {
 	display: block;

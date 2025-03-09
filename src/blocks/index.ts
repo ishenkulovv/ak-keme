@@ -1,6 +1,7 @@
 import Header from './header/Header';
 import Hero from './hero/Hero';
 import Philosophy from './philosophy/Philosophy';
+import Idea from './idea/Idea';
 import DesignConcept from './design_concept/DesignConcept';
 import Approach from './approach/Approach';
 import Parking from './parking/Parking';
@@ -13,6 +14,7 @@ export {
 	Header,
 	Hero,
 	Philosophy,
+	Idea,
 	DesignConcept,
 	Approach,
 	Parking,

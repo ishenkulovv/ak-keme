@@ -1,8 +1,17 @@
 .main {
-	padding-top: 80px;
-	padding-bottom: 80px;
+	background: var(--light);
+	width: 100%;
+	height: max-content;
+	position: relative;
+	z-index: 2;
+	margin-top: 824px;
 }
 
+.wrapper {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	background-color: var(--light);
+}
 .title {
 	font-family: Grtsk Tera;
 	font-weight: 500;

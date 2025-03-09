@@ -1,11 +1,17 @@
 import type { Metadata } from 'next';
-import { Manrope } from 'next/font/google';
+import { Manrope, Great_Vibes } from 'next/font/google';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import '@/src/styles/globals.css';
 
 const manrope = Manrope({
 	subsets: ['latin', 'cyrillic'], // Поддержка кириллицы
 	weight: ['300', '400', '500', '600', '700', '800'], // Выбираем нужные толщины
+	display: 'swap', // Улучшает рендеринг
+});
+
+const great_vibes = Great_Vibes({
+	subsets: ['latin', 'cyrillic'], // Поддержка кириллицы
+	weight: ['400'], // Выбираем нужные толщины
 	display: 'swap', // Улучшает рендеринг
 });
 
@@ -19,7 +25,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang='ru' className={manrope.className}>
+		<html lang='ru' className={(manrope.className, great_vibes.className)}>
 			<body>
 				{children}
 				<SpeedInsights />
