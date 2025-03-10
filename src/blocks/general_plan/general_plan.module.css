@@ -1,0 +1,71 @@
+.main {
+	background-color: var(--light);
+	position: relative;
+	z-index: 2;
+	padding: 80px 0px;
+}
+
+.container {
+	padding: 0px 10px;
+}
+
+.title {
+	font-family: Grtsk Tera;
+	font-weight: 500;
+	font-size: 48px;
+	line-height: 130%;
+	letter-spacing: 0%;
+	text-align: center;
+	vertical-align: middle;
+	color: var(--black);
+}
+
+.image {
+	max-width: 1420px;
+	width: 100%;
+	margin: 0px auto;
+	margin-top: 80px;
+	position: relative;
+}
+
+.image img {
+	width: 100%;
+	border-radius: 8px;
+}
+
+.switch {
+	display: flex;
+	align-items: center;
+	padding: 2px;
+	gap: 2px;
+	border-radius: 8px;
+	max-width: 286px;
+	width: 100%;
+	position: absolute;
+	bottom: 68px;
+	left: 50%;
+	transform: translate(-50%);
+	background-color: var(--light);
+}
+
+.button {
+	display: block;
+	width: 50%;
+	font-family: Manrope;
+	font-weight: 600;
+	font-size: 12px;
+	line-height: 150%;
+	letter-spacing: 0%;
+	text-align: center;
+	color: var(--black);
+	padding: 12px;
+	border-radius: 8px;
+	cursor: pointer;
+	background-color: var(--light);
+	transition: all 0.3s;
+}
+
+.active {
+	background-color: var(--primary);
+	color: var(--light);
+}

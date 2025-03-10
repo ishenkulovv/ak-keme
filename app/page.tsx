@@ -5,6 +5,7 @@ import {
 	DesignConcept,
 	Documentations,
 	Footer,
+	GeneralPlan,
 	Header,
 	Hero,
 	Parking,
@@ -21,6 +22,7 @@ export default function Home() {
 			<Hero />
 			<Philosophy />
 			<DesignConcept />
+			<GeneralPlan />
 			<Approach />
 			<Parking />
 			<ConstructionProgress />
