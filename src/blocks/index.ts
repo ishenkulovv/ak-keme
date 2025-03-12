@@ -10,6 +10,7 @@ import Documentations from './documentations/Documentations';
 import Contact from './contact/Contact';
 import Footer from './footer/Footer';
 import GeneralPlan from './general_plan/GeneralPlan';
+import Infrastructure from './infrastructure/Infrastructure';
 
 export {
 	Header,
@@ -24,4 +25,5 @@ export {
 	Contact,
 	Footer,
 	GeneralPlan,
+	Infrastructure,
 };

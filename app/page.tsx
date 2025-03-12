@@ -8,6 +8,7 @@ import {
 	GeneralPlan,
 	Header,
 	Hero,
+	Infrastructure,
 	Parking,
 	Philosophy,
 } from '@/src/blocks';
@@ -23,6 +24,7 @@ export default function Home() {
 			<Philosophy />
 			<DesignConcept />
 			<GeneralPlan />
+			<Infrastructure />
 			<Approach />
 			<Parking />
 			<ConstructionProgress />
