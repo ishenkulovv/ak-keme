@@ -4,6 +4,7 @@ import global_styles from '@/src/styles/global_styles.module.css';
 import styles from './infrastructure.module.css';
 import clsx from 'clsx';
 import Slider from './Slider';
+import Model from './Model';
 
 function Infrastructure() {
 	return (
@@ -77,22 +78,11 @@ function Infrastructure() {
 						Для комфортного проживания и активного отдыха предусмотрены:
 					</h6>
 				</div>
-
-				{/* <SwiperSlide>
-							<div className={styles.slider_item}>
-								<div className={styles.slider_image}>
-									<Image
-										src='/images/slider_1.png'
-										width={280}
-										height={330}
-										alt='test'
-									/>
-								</div>
-								<div className={styles.slider_title}>Теннисный корт</div>
-							</div>
-						</SwiperSlide> */}
 				<div className={styles.slider}>
 					<Slider />
+				</div>
+				<div className={styles.model}>
+					<Model />
 				</div>
 			</section>
 		</>
