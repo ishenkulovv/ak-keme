@@ -1,5 +1,7 @@
 import {
+	Apartments,
 	Approach,
+	Backyards,
 	ConstructionProgress,
 	Contact,
 	DesignConcept,
@@ -25,6 +27,8 @@ export default function Home() {
 			<DesignConcept />
 			<GeneralPlan />
 			<Infrastructure />
+			<Apartments />
+			<Backyards />
 			<Approach />
 			<Parking />
 			<ConstructionProgress />

@@ -11,6 +11,8 @@ import Contact from './contact/Contact';
 import Footer from './footer/Footer';
 import GeneralPlan from './general_plan/GeneralPlan';
 import Infrastructure from './infrastructure/Infrastructure';
+import Apartments from './apartments/Apartments';
+import Backyards from './backyards/Backyards';
 
 export {
 	Header,
@@ -26,4 +28,6 @@ export {
 	Footer,
 	GeneralPlan,
 	Infrastructure,
+	Apartments,
+	Backyards,
 };

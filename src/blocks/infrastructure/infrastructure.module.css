@@ -100,8 +100,6 @@
 
 .sliderContainer {
 	position: relative;
-
-	/* max-width: 1200px; */
 	width: 100vw;
 	margin: 0 auto; /* Центрирует контейнер */
 	padding-left: 0; /* Убираем стандартный отступ */
@@ -173,7 +171,7 @@
 .rain {
 	border-radius: 6px;
 	width: 100%;
-	max-width: 1640px;
+	max-width: 1440px;
 	height: auto;
 }
 

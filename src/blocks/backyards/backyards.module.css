@@ -1,0 +1,45 @@
+.main {
+	padding-top: 80px;
+	padding-bottom: 80px;
+	background-color: var(--light);
+	position: relative;
+	z-index: 2;
+}
+
+.title {
+	font-family: Grtsk Tera;
+	font-weight: 500;
+	font-size: 48px;
+	line-height: 130%;
+	letter-spacing: 0%;
+	text-align: center;
+	vertical-align: middle;
+	color: var(--black);
+}
+
+.descr {
+	max-width: 700px;
+	width: 100%;
+	margin: 0px auto;
+	margin-top: 48px;
+	font-family: Manrope;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 150%;
+	letter-spacing: 0%;
+	text-align: center;
+	vertical-align: middle;
+	color: var(--text-gray);
+}
+
+.slider {
+	width: 100%;
+	height: 580px; /* Высота слайдера */
+}
+
+.slider img {
+	width: 100%;
+	height: 100%;
+	transition: all 0.3s;
+	object-fit: contain;
+}
