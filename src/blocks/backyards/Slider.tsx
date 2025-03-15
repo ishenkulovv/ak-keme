@@ -20,35 +20,46 @@ const array = [
 
 function Slider() {
 	return (
-		<Swiper
-			modules={[Navigation]}
-			slidesPerView={3}
-			centeredSlides={true} // Центрируем активный слайд
-			loop={true} // Цикличный режим
-			navigation={true}
-			spaceBetween={120}
-			breakpoints={{
-				768: {
-					slidesPerView: 3, // По бокам будут видны уменьшенные слайды
-				},
-				320: {
-					slidesPerView: 1, // На маленьких экранах по одному слайду
-				},
-			}}
-			className={styles.slider}
-		>
-			{array.map((src, index) => (
-				<SwiperSlide key={index}>
-					<Image
-						src={src}
-						alt='image'
-						width={400}
-						height={580}
-						className={styles.slider_image}
-					/>
-				</SwiperSlide>
-			))}
-		</Swiper>
+		<>
+			<div className={`${styles.arrow} ${styles.prev}`} id='custom-prev'>
+				<Image src='/icons/slider-prev.svg' alt='Prev' width={16} height={16} />
+			</div>
+			<div className={`${styles.arrow} ${styles.next}`} id='custom-next'>
+				<Image src='/icons/slider-next.svg' alt='Prev' width={16} height={16} />
+			</div>
+			<Swiper
+				modules={[Navigation]}
+				slidesPerView={3}
+				centeredSlides={true} // Центрируем активный слайд
+				loop={true} // Цикличный режим
+				navigation={{
+					nextEl: '#custom-next',
+					prevEl: '#custom-prev',
+				}}
+				spaceBetween={120}
+				breakpoints={{
+					768: {
+						slidesPerView: 3, // По бокам будут видны уменьшенные слайды
+					},
+					320: {
+						slidesPerView: 1, // На маленьких экранах по одному слайду
+					},
+				}}
+				className={styles.slider}
+			>
+				{array.map((src, index) => (
+					<SwiperSlide key={index}>
+						<Image
+							src={src}
+							alt='image'
+							width={400}
+							height={580}
+							className={styles.slider_image}
+						/>
+					</SwiperSlide>
+				))}
+			</Swiper>
+		</>
 	);
 }
 
