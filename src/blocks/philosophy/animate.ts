@@ -26,7 +26,7 @@ export const useAnimate = () => {
 			scrollTrigger: {
 				trigger: '#main_ph',
 				start: '300px',
-				end: '900px',
+				end: '700px',
 				scrub: 1,
 				onLeave: () => {
 					document.getElementById('block_1')?.classList.add('leave');
@@ -43,8 +43,8 @@ export const useAnimate = () => {
 		gsap.to('#block_3', {
 			scrollTrigger: {
 				trigger: '#main_ph',
-				start: '1500px',
-				end: '2100px',
+				start: '1200px',
+				end: '1700px',
 				scrub: 1,
 				onEnter: () => {
 					document.getElementById('block_2')?.classList.add('leave');

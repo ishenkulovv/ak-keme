@@ -1,6 +1,5 @@
 .main {
-	min-height: 100vh;
-	height: 280vh;
+	height: 3800px;
 	padding-top: 80px;
 	padding-bottom: 80px;
 	background-color: var(--light);
