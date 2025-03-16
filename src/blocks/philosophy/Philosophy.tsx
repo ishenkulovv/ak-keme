@@ -86,7 +86,7 @@ function Philosophy() {
 								</p>
 							</div>
 						</div>
-						<div className={styles.block} id='block_3'>
+						<div className={styles.block} id='block_4'>
 							<Image
 								src='/images/image-1.png'
 								alt='Image'

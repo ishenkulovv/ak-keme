@@ -1,6 +1,6 @@
 .main {
 	min-height: 100vh;
-	height: 400vh;
+	height: 280vh;
 	padding-top: 80px;
 	padding-bottom: 80px;
 	background-color: var(--light);
@@ -50,6 +50,10 @@
 	align-items: flex-start;
 	gap: 120px;
 	margin-top: 80px;
+	opacity: 0;
+	position: absolute;
+	top: 120px;
+	background: var(--light);
 }
 
 .block_texts {
@@ -86,4 +90,8 @@
 	letter-spacing: 0%;
 	color: var(--text-gray);
 	margin-top: 20px;
+}
+
+.image {
+	height: auto;
 }

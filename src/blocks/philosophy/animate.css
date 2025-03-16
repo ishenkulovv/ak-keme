@@ -4,6 +4,70 @@
 	overflow: hidden;
 	max-width: 1200px;
 	margin: 0px auto;
+	position: relative;
+}
+
+#block_1 {
+	opacity: 1;
+	z-index: 2;
+	transition: all 0.7s;
+}
+
+#block_1.leave {
+	top: 140px;
+	opacity: 0;
+	transform: scale(0.95);
+}
+
+#block_2 {
+	top: 300px;
+	z-index: 3;
+	transition: all 0.7s;
+}
+
+#block_2.animated {
+	top: 120px;
+	opacity: 1;
+}
+
+#block_2.leave {
+	top: 140px;
+	opacity: 0;
+	transform: scale(0.95);
+}
+
+#block_3 {
+	top: 300px;
+	z-index: 4;
+	transition: all 0.7s;
+}
+
+#block_3.animated {
+	top: 120px;
+	opacity: 1;
+}
+
+#block_3.leave {
+	top: 140px;
+	opacity: 0;
+	transform: scale(0.95);
+}
+
+#block_4 {
+	top: 300px;
+	z-index: 5;
+	transition: all 0.7s;
+}
+
+#block_4.animated {
+	top: 120px;
+	opacity: 1;
+}
+
+#block_4.leave {
+	top: 140px;
+	opacity: 0;
+	transform: scale(0.95);
 }
 
 #animate_block.fixed {
