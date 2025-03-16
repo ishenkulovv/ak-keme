@@ -1,0 +1,23 @@
+#animate_block {
+	width: 100%;
+	height: calc(100vh - 100px);
+	overflow: hidden;
+	max-width: 1200px;
+	margin: 0px auto;
+}
+
+#animate_block.fixed {
+	position: fixed;
+	top: 80px;
+	z-index: 5;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#animate_block.leave {
+	position: absolute;
+	bottom: 25px;
+	z-index: 5;
+	left: 50%;
+	transform: translateX(-50%);
+}
