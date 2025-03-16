@@ -2,7 +2,15 @@ import Image from 'next/image';
 import styles from './header.module.css';
 import { MotionDiv } from '@/src/components';
 
-function Header() {
+interface Props {
+	data: {
+		background_image: string;
+		building_image: string;
+		title: string;
+	};
+}
+
+function Header({ data }: Props) {
 	return (
 		<div className={styles.header}>
 			<MotionDiv
@@ -12,7 +20,7 @@ function Header() {
 				className={styles.wrapper}
 			>
 				<Image
-					src='/images/sky.png'
+					src={data.background_image}
 					alt='Sky'
 					className={styles.sky}
 					width={1440}
@@ -25,7 +33,7 @@ function Header() {
 				transition={{ duration: 1.2, ease: 'easeOut', delay: 1.3 }}
 			>
 				<Image
-					src='/images/header-building.png'
+					src={data.building_image}
 					alt='Sky'
 					className={styles.build}
 					width={1200}
@@ -37,9 +45,7 @@ function Header() {
 				animate={{ opacity: 1 }}
 				transition={{ duration: 1.2, ease: 'easeOut', delay: 1.3 }}
 			>
-				<h1 className={styles.title}>
-					Гармония с природой <br />и комфорт современности
-				</h1>
+				<h1 className={styles.title}>{data.title}</h1>
 			</MotionDiv>
 		</div>
 	);

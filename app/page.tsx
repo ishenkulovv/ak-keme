@@ -16,12 +16,14 @@ import {
 } from '@/src/blocks';
 import styles from './page.module.css';
 import { Navigation } from '@/src/components';
+import { fetchData } from '@/src/utils/fetchData';
 
-export default function Home() {
+export default async function Home() {
+	const transformedData = await fetchData();
 	return (
 		<div className={styles.page}>
 			<Navigation />
-			<Header />
+			<Header data={transformedData.header_ru} />
 			<Hero />
 			<Philosophy />
 			<DesignConcept />
