@@ -29,6 +29,11 @@ function Navigation({ options }: Props) {
 					<div className={styles.logo}>
 						<Image src='/logo-nav.png' alt='Ak keme' width='127' height='48' />
 					</div>
+					<div className={styles.burger}>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
 					<ul className={styles.list}>
 						<li className={styles.item}>
 							<Link className={styles.link} href=''>

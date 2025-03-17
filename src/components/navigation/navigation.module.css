@@ -57,3 +57,14 @@
 	padding-right: 6px !important;
 	width: 70px !important;
 }
+
+@media (max-width: 800px) {
+	.list,
+	.actions {
+		display: none;
+	}
+
+	.burger {
+		position: relative;
+	}
+}
