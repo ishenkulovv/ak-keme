@@ -5,9 +5,22 @@ import styles from './navigation.module.css';
 import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '@/src/ui';
+import { Button, Select } from '@/src/ui';
+import { useRouter } from 'next/navigation';
 
-function Navigation() {
+interface Props {
+	options: {
+		value: string;
+		label: string;
+	}[];
+}
+
+function Navigation({ options }: Props) {
+	const router = useRouter();
+	const handleLang = (value: string) => {
+		router.push(`/${value}`);
+	};
+
 	return (
 		<>
 			<div className={styles.space}></div>
@@ -38,8 +51,17 @@ function Navigation() {
 							</Link>
 						</li>
 					</ul>
-					<div className={styles.button}>
-						<Button>Связаться с нами</Button>
+					<div className={styles.actions}>
+						<div className={styles.button}>
+							<Button>Связаться с нами</Button>
+						</div>
+						<div className={styles.select}>
+							<Select
+								options={options}
+								onChange={handleLang}
+								className={styles.select_content}
+							/>
+						</div>
 					</div>
 				</div>
 			</nav>

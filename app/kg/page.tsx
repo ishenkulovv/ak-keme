@@ -18,12 +18,23 @@ import styles from '../page.module.css';
 import { Navigation } from '@/src/components';
 import { fetchData } from '@/src/utils/fetchData';
 
+const optionsLang = [
+	{
+		value: 'kg',
+		label: 'KG',
+	},
+	{
+		value: 'ru',
+		label: 'RU',
+	},
+];
+
 export default async function Home() {
 	const transformedData = await fetchData();
 
 	return (
 		<div className={styles.page}>
-			<Navigation />
+			<Navigation options={optionsLang} />
 			<Header data={transformedData.header_kg} />
 			<Hero
 				data={{ ...transformedData.hero_kg, writer: transformedData.writer_kg }}

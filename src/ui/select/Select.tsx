@@ -62,15 +62,24 @@ interface SelectOptions {
 		value: string;
 		label: string;
 	}[];
+	onChange?: (value: string) => void;
+	className?: string;
 }
 
-function Select({ options = defaultOptions }: SelectOptions) {
+function Select({
+	options = defaultOptions,
+	onChange,
+	className,
+}: SelectOptions) {
 	const [open, setOpen] = React.useState(false);
 	const [value, setValue] = React.useState(options[0]);
 
 	return (
 		<div className={styles.wrapper}>
-			<div className={styles.content} onClick={() => setOpen(!open)}>
+			<div
+				className={clsx(styles.content, className ? className : '')}
+				onClick={() => setOpen(!open)}
+			>
 				<div className={styles.value}>{value.label}</div>
 				<Image
 					src='/icons/arrow_dropdown.svg'
@@ -98,6 +107,7 @@ function Select({ options = defaultOptions }: SelectOptions) {
 								)}
 								onClick={() => {
 									setValue(option);
+									onChange?.(option.value);
 									setOpen(false);
 								}}
 							>
