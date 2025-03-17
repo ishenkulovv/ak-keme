@@ -31,10 +31,19 @@ function Hero({ data }: Props) {
 				</div>
 				<div className={styles.slider}>
 					<Slider
-						slidesPerView={3}
+						id='hero-slider'
+						slidesPerView={1}
 						loop={true}
 						centeredSlides={false}
 						images={data.slider_images}
+						breakpoints={{
+							901: {
+								slidesPerView: 3,
+							},
+							501: {
+								slidesPerView: 2,
+							},
+						}}
 					/>
 				</div>
 			</div>

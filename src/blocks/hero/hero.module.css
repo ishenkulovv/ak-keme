@@ -39,3 +39,36 @@
 .slider {
 	margin-top: 80px;
 }
+
+@media (max-width: 1200px) {
+	.slider img {
+		max-height: 600px;
+	}
+	.wrapper {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+@media (max-width: 1000px) {
+	.slider img {
+		max-height: 450px;
+	}
+}
+
+@media (max-width: 500px) {
+	.title {
+		font-weight: 500;
+		font-size: 24px;
+		line-height: 130%;
+	}
+	.description {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 150%;
+		letter-spacing: 0%;
+	}
+	.slider img {
+		max-height: 270px;
+	}
+}

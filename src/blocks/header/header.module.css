@@ -29,3 +29,19 @@
 	width: 100%;
 	color: var(--light);
 }
+
+@media (max-width: 800px) {
+	.title {
+		font-family: Grtsk Tera;
+		font-size: 32px;
+		max-width: 555px;
+	}
+}
+
+@media (max-width: 500px) {
+	.title {
+		font-family: Grtsk Tera;
+		font-size: 24px;
+		max-width: 345px;
+	}
+}

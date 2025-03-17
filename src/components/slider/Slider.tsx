@@ -7,49 +7,32 @@ import 'swiper/css/navigation';
 import Image from 'next/image';
 import styles from './slider.module.css';
 import clsx from 'clsx';
+import { Navigation } from 'swiper/modules';
 
 interface SliderProps {
+	id: string;
 	buttonPosition?: 'bottom' | 'side';
 	slidesPerView?: number;
-	sliderPerViewChange?: number;
 	centeredSlides?: boolean;
 	loop?: boolean;
 	images?: string[];
 	mini?: boolean;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	breakpoints?: any;
 }
 
 function Slider({
+	id,
 	buttonPosition = 'bottom',
 	slidesPerView = 1,
-	sliderPerViewChange,
 	centeredSlides = false,
 	loop = false,
 	images,
 	mini,
+	breakpoints,
 }: SliderProps) {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const sliderRef = React.useRef<any>(null);
-	const [slidesPerViewCustom, setSlidesPerViewCustom] =
-		React.useState(slidesPerView);
-
-	React.useEffect(() => {
-		if (!sliderPerViewChange) return;
-		const handleScroll = () => {
-			if (!sliderRef.current) return;
-
-			const rect = sliderRef.current.getBoundingClientRect();
-
-			// Когда элемент в зоне видимости (например, на 50% экрана)
-			if (rect.top <= window.innerHeight / 2 && rect.bottom >= 0) {
-				setSlidesPerViewCustom(sliderPerViewChange); // При попадании в viewport меняем на 1
-			} else {
-				setSlidesPerViewCustom(slidesPerView); // Возвращаем стандартное значение
-			}
-		};
-
-		window.addEventListener('scroll', handleScroll);
-		return () => window.removeEventListener('scroll', handleScroll);
-	}, []);
 
 	const renderDefault = () => (
 		<>
@@ -95,9 +78,10 @@ function Slider({
 	return (
 		<div className={styles.main}>
 			<Swiper
-				slidesPerView={slidesPerViewCustom}
+				slidesPerView={slidesPerView}
 				spaceBetween={20}
 				ref={sliderRef}
+				modules={[Navigation]}
 				className={styles.swiper}
 				loop={loop}
 				centeredSlides={centeredSlides}
@@ -105,9 +89,10 @@ function Slider({
 					stretch: 100,
 				}}
 				navigation={{
-					nextEl: '#next',
-					prevEl: '#prev',
+					nextEl: `#${id}_next`,
+					prevEl: `#${id}_prev`,
 				}}
+				breakpoints={breakpoints}
 			>
 				{images
 					? images.map((image, idx) => (
@@ -128,20 +113,24 @@ function Slider({
 					styles.button,
 					styles.prev,
 					buttonPosition === 'bottom' && styles.bottom,
-					buttonPosition === 'side' && styles.side
+					buttonPosition === 'side' && styles.side,
+					mini && styles.mini,
+					'prev'
 				)}
-				id='prev'
+				id={`${id}_prev`}
 			>
 				<Image src='/icons/slider-prev.svg' alt='Prev' width={16} height={16} />
 			</div>
 			<div
 				className={clsx(
 					styles.button,
+					styles.next,
 					buttonPosition === 'bottom' && styles.bottom,
 					buttonPosition === 'side' && styles.side,
-					mini && styles.mini
+					mini && styles.mini,
+					'next'
 				)}
-				id='next'
+				id={`${id}_next`}
 			>
 				<Image src='/icons/slider-next.svg' alt='Next' width={16} height={16} />
 			</div>

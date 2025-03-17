@@ -26,13 +26,13 @@
 	cursor: pointer;
 }
 
-.side.prev {
+.prev {
 	top: 50%;
 	transform: translateY(-50%);
 	left: 30px;
 }
 
-.side.next {
+.next {
 	top: 50%;
 	transform: translateY(-50%);
 	right: 30px;
@@ -40,11 +40,13 @@
 }
 
 .bottom.prev {
+	top: auto;
 	left: 48%;
 	transform: translate(-50%);
 }
 
 .bottom.next {
+	top: auto;
 	left: 52%;
 	transform: translate(-50%);
 }
@@ -60,4 +62,20 @@
 .disabled {
 	cursor: auto;
 	opacity: 0.7;
+}
+
+@media (max-width: 500px) {
+	.bottom.next {
+		left: 55%;
+		bottom: 20px;
+		width: 32px;
+		height: 32px;
+	}
+
+	.bottom.prev {
+		left: 45%;
+		bottom: 20px;
+		width: 32px;
+		height: 32px;
+	}
 }
