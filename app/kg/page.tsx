@@ -25,7 +25,9 @@ export default async function Home() {
 		<div className={styles.page}>
 			<Navigation />
 			<Header data={transformedData.header_kg} />
-			<Hero />
+			<Hero
+				data={{ ...transformedData.hero_kg, writer: transformedData.writer_kg }}
+			/>
 			<Philosophy />
 			<DesignConcept />
 			<GeneralPlan />

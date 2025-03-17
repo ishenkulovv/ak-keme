@@ -4,12 +4,33 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './infrastructure.module.css';
 import { MoonIcon, SunIcon } from '@/public/icons';
+import { MotionDiv } from '@/src/components';
+import { useInView } from 'framer-motion';
+
+const fadeInVariant = {
+	hidden: { opacity: 0, y: 350 }, // Начальное состояние (невидимый + смещённый вниз)
+	visible: {
+		opacity: 1,
+		y: 0,
+		transition: { duration: 0.7 }, // Плавное появление
+	},
+};
 
 function Model() {
 	const [nightView, setNightView] = React.useState(false);
+	const ref = React.useRef(null);
+	const isInView = useInView(ref, {
+		amount: 0.8, // ✅ Триггерится, когда 60% блока в зоне видимости
+		once: true, // ✅ Анимация срабатывает только один раз
+	});
 
 	return (
-		<>
+		<MotionDiv
+			ref={ref}
+			initial='hidden'
+			animate={isInView ? 'visible' : 'hidden'} // Активация при входе в зону видимости
+			variants={fadeInVariant}
+		>
 			{!nightView ? (
 				<Image
 					src='/images/model_day.png'
@@ -46,7 +67,7 @@ function Model() {
 					<MoonIcon color={!nightView ? '#E1E1E1' : '#14716B'} />
 				</div>
 			</label>
-		</>
+		</MotionDiv>
 	);
 }
 

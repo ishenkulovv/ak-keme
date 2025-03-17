@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 export const useAnimate = () => {
+	const interval = 600;
 	React.useEffect(() => {
 		gsap.to('#animate_block', {
 			scrollTrigger: {
@@ -26,7 +27,7 @@ export const useAnimate = () => {
 			scrollTrigger: {
 				trigger: '#main_ph',
 				start: '300px',
-				end: '700px',
+				end: `${300 + interval}px`,
 				scrub: 1,
 				onLeave: () => {
 					document.getElementById('block_1')?.classList.add('leave');
@@ -43,8 +44,8 @@ export const useAnimate = () => {
 		gsap.to('#block_3', {
 			scrollTrigger: {
 				trigger: '#main_ph',
-				start: '1200px',
-				end: '1700px',
+				start: `${300 + interval * 2}px`, // 👈 Единый шаг
+				end: `${300 + interval * 3}px`,
 				scrub: 1,
 				onEnter: () => {
 					document.getElementById('block_2')?.classList.add('leave');

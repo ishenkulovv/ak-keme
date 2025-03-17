@@ -20,11 +20,16 @@ import { fetchData } from '@/src/utils/fetchData';
 
 export default async function Home() {
 	const transformedData = await fetchData();
+
+	console.log(transformedData);
+
 	return (
 		<div className={styles.page}>
 			<Navigation />
 			<Header data={transformedData.header_ru} />
-			<Hero />
+			<Hero
+				data={{ ...transformedData.hero_ru, writer: transformedData.writer_ru }}
+			/>
 			<Philosophy />
 			<DesignConcept />
 			<GeneralPlan />

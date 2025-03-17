@@ -1,10 +1,12 @@
+import React from 'react';
 import Image from 'next/image';
-
 import global_styles from '@/src/styles/global_styles.module.css';
 import styles from './infrastructure.module.css';
 import clsx from 'clsx';
 import Slider from './Slider';
 import Model from './Model';
+import ImageFirst from './ImageFirst';
+import ImageSecond from './ImageSecond';
 
 function Infrastructure() {
 	return (
@@ -15,25 +17,11 @@ function Infrastructure() {
 					Чолпон-Ата — это туристический центр Иссык-Кульской области с развитой
 					инфраструктурой и широкими возможностями для отдыха.
 				</p>
-				<div className={styles.image}>
-					<Image
-						src='/images/infast.png'
-						width={1420}
-						height={680}
-						alt='test'
-					/>
-				</div>
+				<ImageFirst />
 			</section>
 			<section className={styles.main}>
-				<h2 className={styles.title}>Инфраструктура</h2>
-				<div className={clsx(styles.image)}>
-					<Image
-						src='/images/infast_2.png'
-						width={1420}
-						height={680}
-						alt='test'
-					/>
-				</div>
+				<h2 className={styles.title}>Локация курорта</h2>
+				<ImageSecond />
 				<div className={clsx(global_styles.container, global_styles.mt_60)}>
 					<div className={styles.block}>
 						<div className={styles.block_left}>

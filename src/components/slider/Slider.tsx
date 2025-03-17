@@ -29,38 +29,8 @@ function Slider({
 }: SliderProps) {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const sliderRef = React.useRef<any>(null);
-	const [isBeginning, setIsBeginning] = React.useState(true);
-	const [isEnd, setIsEnd] = React.useState(false);
 	const [slidesPerViewCustom, setSlidesPerViewCustom] =
 		React.useState(slidesPerView);
-
-	const handlePrev = React.useCallback(() => {
-		if (!sliderRef.current) return;
-		sliderRef.current.swiper.slidePrev();
-	}, []);
-
-	const handleNext = React.useCallback(() => {
-		if (!sliderRef.current) return;
-		sliderRef.current.swiper.slideNext();
-	}, []);
-
-	React.useEffect(() => {
-		const swiperInstance = sliderRef.current?.swiper;
-
-		if (!swiperInstance) return;
-
-		const updateNavButtons = () => {
-			setIsBeginning(swiperInstance.isBeginning);
-			setIsEnd(swiperInstance.isEnd);
-		};
-
-		swiperInstance.on('slideChange', updateNavButtons);
-		updateNavButtons();
-
-		return () => {
-			swiperInstance.off('slideChange', updateNavButtons);
-		};
-	}, []);
 
 	React.useEffect(() => {
 		if (!sliderPerViewChange) return;
@@ -134,6 +104,10 @@ function Slider({
 				coverflowEffect={{
 					stretch: 100,
 				}}
+				navigation={{
+					nextEl: '#next',
+					prevEl: '#prev',
+				}}
 			>
 				{images
 					? images.map((image, idx) => (
@@ -154,11 +128,9 @@ function Slider({
 					styles.button,
 					styles.prev,
 					buttonPosition === 'bottom' && styles.bottom,
-					buttonPosition === 'side' && styles.side,
-					mini && styles.mini,
-					isBeginning && styles.disabled
+					buttonPosition === 'side' && styles.side
 				)}
-				onClick={!isBeginning ? handlePrev : undefined}
+				id='prev'
 			>
 				<Image src='/icons/slider-prev.svg' alt='Prev' width={16} height={16} />
 			</div>
@@ -167,13 +139,11 @@ function Slider({
 					styles.button,
 					buttonPosition === 'bottom' && styles.bottom,
 					buttonPosition === 'side' && styles.side,
-					mini && styles.mini,
-					styles.next,
-					isEnd && styles.disabled
+					mini && styles.mini
 				)}
-				onClick={!isEnd ? handleNext : undefined}
+				id='next'
 			>
-				<Image src='/icons/slider-next.svg' alt='Prev' width={16} height={16} />
+				<Image src='/icons/slider-next.svg' alt='Next' width={16} height={16} />
 			</div>
 		</div>
 	);
