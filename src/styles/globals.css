@@ -21,6 +21,7 @@ html {
 
 body {
 	font-family: 'Manrope', sans-serif;
+	scroll-behavior: smooth;
 }
 
 :root {

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Manrope, Great_Vibes } from 'next/font/google';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import '@/src/styles/globals.css';
+import LenisWrapper from '@/src/components/lenis_wrapper/LenisWrapper';
 
 const manrope = Manrope({
 	subsets: ['latin', 'cyrillic'], // Поддержка кириллицы
@@ -27,7 +28,8 @@ export default function RootLayout({
 	return (
 		<html lang='ru' className={(manrope.className, great_vibes.className)}>
 			<body>
-				{children}
+				<LenisWrapper>{children}</LenisWrapper>
+
 				<SpeedInsights />
 			</body>
 		</html>

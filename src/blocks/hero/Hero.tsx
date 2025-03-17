@@ -2,6 +2,7 @@ import global from '@/src/styles/global_styles.module.css';
 import styles from './hero.module.css';
 import { Slider } from '@/src/components';
 import Idea from '../idea/Idea';
+import { formattedText } from '@/src/utils/formattedText';
 
 interface Props {
 	data: {
@@ -23,7 +24,10 @@ function Hero({ data }: Props) {
 			<div className={styles.wrapper}>
 				<div className={global.container}>
 					<h2 className={styles.title}>{data.title}</h2>
-					<p className={styles.description}>{data.content}</p>
+					<p
+						className={styles.description}
+						dangerouslySetInnerHTML={{ __html: formattedText(data.content) }}
+					/>
 				</div>
 				<div className={styles.slider}>
 					<Slider
