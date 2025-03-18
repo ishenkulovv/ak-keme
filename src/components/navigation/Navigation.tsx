@@ -7,7 +7,6 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button, Select } from '@/src/ui';
-import { useRouter } from 'next/navigation';
 import FooterSocials from '../footer_socials/FooterSocials';
 
 interface Props {
@@ -18,10 +17,9 @@ interface Props {
 }
 
 function Navigation({ options }: Props) {
-	const router = useRouter();
 	const [burgerVisible, setBurgerVisible] = React.useState(false);
 	const handleLang = (value: string) => {
-		router.push(`/${value}`);
+		window.location.href = value;
 	};
 
 	return (
