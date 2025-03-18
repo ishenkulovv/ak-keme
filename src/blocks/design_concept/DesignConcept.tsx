@@ -1,6 +1,6 @@
 import global from '@/src/styles/global_styles.module.css';
 import styles from './design_concept.module.css';
-import { Slider } from '@/src/components';
+import SliderDesign from './Slider';
 
 function DesignConcept() {
 	return (
@@ -15,19 +15,7 @@ function DesignConcept() {
 					уютным и стильным.
 				</p>
 			</div>
-			<div className={styles.slider}>
-				<Slider
-					id='design_slider'
-					buttonPosition='side'
-					slidesPerView={1}
-					loop
-					breakpoints={{
-						320: { slidesPerView: 1 },
-						501: { slidesPerView: 2 },
-						1100: { slidesPerView: 3 },
-					}}
-				/>
-			</div>
+			<SliderDesign />
 		</section>
 	);
 }

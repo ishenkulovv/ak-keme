@@ -21,6 +21,7 @@ interface SliderProps {
 	breakpoints?: any;
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	sliderItemClass?: any;
+	spaceBetween?: number;
 }
 
 function Slider({
@@ -33,6 +34,7 @@ function Slider({
 	mini,
 	breakpoints,
 	sliderItemClass,
+	spaceBetween = 20,
 }: SliderProps) {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const sliderRef = React.useRef<any>(null);
@@ -82,7 +84,7 @@ function Slider({
 		<div className={styles.main}>
 			<Swiper
 				slidesPerView={slidesPerView}
-				spaceBetween={20}
+				spaceBetween={spaceBetween}
 				ref={sliderRef}
 				modules={[Navigation]}
 				className={styles.swiper}
