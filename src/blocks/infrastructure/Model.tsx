@@ -31,26 +31,22 @@ function Model() {
 			animate={isInView ? 'visible' : 'hidden'} // Активация при входе в зону видимости
 			variants={fadeInVariant}
 		>
-			{!nightView ? (
-				<Image
-					src='/images/model_day.png'
-					width={1440}
-					height={650}
-					alt='Model'
-					className={styles.model_image}
-				/>
-			) : (
-				<>
-					{/* TODO: Доделать дождь */}
-					<Image
-						src='/images/model_night.png'
-						width={1440}
-						height={650}
-						alt='Model'
-						className={styles.model_image}
-					/>
-				</>
-			)}
+			<Image
+				src='/images/model_day.png'
+				width={1440}
+				height={650}
+				alt='Model'
+				className={styles.model_image}
+				style={{ display: nightView ? 'block' : 'none' }}
+			/>
+			<Image
+				src='/images/model_night.png'
+				width={1440}
+				height={650}
+				alt='Model'
+				className={styles.model_image}
+				style={{ display: !nightView ? 'block' : 'none' }}
+			/>
 			<label htmlFor='switch' className={styles.model_switch}>
 				<div className={styles.icon}>
 					<SunIcon color={nightView ? '#E1E1E1' : '#14716B'} />
