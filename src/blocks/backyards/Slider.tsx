@@ -36,13 +36,13 @@ function Slider() {
 					nextEl: '#yeards-custom-next',
 					prevEl: '#yeards-custom-prev',
 				}}
-				spaceBetween={120}
+				spaceBetween={20}
 				breakpoints={{
 					768: {
 						slidesPerView: 3, // По бокам будут видны уменьшенные слайды
 					},
 					320: {
-						slidesPerView: 1, // На маленьких экранах по одному слайду
+						slidesPerView: 1.5, // На маленьких экранах по одному слайду
 					},
 				}}
 				className={styles.slider}

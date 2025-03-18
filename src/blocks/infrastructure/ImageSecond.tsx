@@ -18,7 +18,7 @@ const fadeInVariant = {
 function ImageSecond() {
 	const ref = React.useRef(null);
 	const isInView = useInView(ref, {
-		amount: 0.8, // ✅ Триггерится, когда 60% блока в зоне видимости
+		amount: 0.4, // ✅ Триггерится, когда 60% блока в зоне видимости
 		once: true, // ✅ Анимация срабатывает только один раз
 	});
 	return (

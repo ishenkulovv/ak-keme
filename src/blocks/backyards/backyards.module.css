@@ -41,9 +41,10 @@
 
 .slider img {
 	width: 100%;
-	height: 100%;
+	height: 580px;
 	transition: all 0.3s;
-	object-fit: contain;
+	object-fit: cover;
+	border-radius: 12px;
 }
 
 .arrow {
@@ -58,8 +59,8 @@
 }
 
 .arrow img {
-	width: 16px;
-	height: 16px;
+	width: 16px !important;
+	height: 16px !important;
 }
 
 .prev,
@@ -75,4 +76,41 @@
 .next {
 	left: auto;
 	right: 50px;
+}
+
+@media (max-width: 1000px) {
+	.slider,
+	.slider img {
+		height: 450px;
+	}
+}
+
+@media (max-width: 500px) {
+	.title {
+		font-weight: 500;
+		font-size: 24px;
+		line-height: 130%;
+		letter-spacing: 0%;
+		text-align: center;
+		vertical-align: middle;
+	}
+	.descr {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 150%;
+		letter-spacing: 0%;
+		text-align: center;
+		vertical-align: middle;
+	}
+	.slider,
+	.slider img {
+		height: 350px;
+	}
+
+	.next {
+		right: 25px;
+	}
+	.prev {
+		left: 25px;
+	}
 }

@@ -11,14 +11,14 @@ const fadeInVariant = {
 	visible: {
 		opacity: 1,
 		y: 0,
-		transition: { duration: 0.5 }, // Плавное появление
+		transition: { duration: 0.3 }, // Плавное появление
 	},
 };
 
 function ImageFirst() {
 	const ref = React.useRef(null);
 	const isInView = useInView(ref, {
-		amount: 0.8, // ✅ Триггерится, когда 60% блока в зоне видимости
+		amount: 0.4, // ✅ Триггерится, когда 60% блока в зоне видимости
 		once: true, // ✅ Анимация срабатывает только один раз
 	});
 	return (
