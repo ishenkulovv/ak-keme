@@ -1,6 +1,6 @@
 import global from '@/src/styles/global_styles.module.css';
 import styles from './approach.module.css';
-import { Slider } from '@/src/components';
+import SliderDesign from './SliderC';
 
 function Approach() {
 	return (
@@ -13,9 +13,7 @@ function Approach() {
 					обеспечивают комфорт при каждом входе и выходе.
 				</p>
 			</div>
-			<div className={styles.slider}>
-				<Slider id='approach-slider' slidesPerView={3} buttonPosition='side' />
-			</div>
+			<SliderDesign />
 		</section>
 	);
 }

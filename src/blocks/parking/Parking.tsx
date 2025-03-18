@@ -1,6 +1,6 @@
 import global from '@/src/styles/global_styles.module.css';
 import styles from './parking.module.css';
-import { Slider } from '@/src/components';
+import SliderDesign from './SliderC';
 
 function Parking() {
 	return (
@@ -14,9 +14,7 @@ function Parking() {
 					приятным.
 				</p>
 			</div>
-			<div className={styles.slider}>
-				<Slider id='parking_slider' />
-			</div>
+			<SliderDesign />
 		</section>
 	);
 }
