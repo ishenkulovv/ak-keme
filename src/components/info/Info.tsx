@@ -11,7 +11,7 @@ function Info() {
 				<span>Телефон:</span> +996 700 123 456
 			</p>
 			<p className={styles.contact_text}>
-				<span>Почта:</span> <a href='$'>akkeme@mail.com</a>
+				<span>Почта:</span> <a href='mail:akkeme@mail.com'>akkeme@mail.com</a>
 			</p>
 		</>
 	);
