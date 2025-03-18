@@ -27,7 +27,7 @@ function Navigation({ options }: Props) {
 	return (
 		<>
 			<div className={styles.space}></div>
-			<nav className={clsx(styles.nav)}>
+			<nav className={clsx(styles.nav, burgerVisible ? styles.active : '')}>
 				<div className={clsx(global.container, styles.container)}>
 					<div className={styles.logo}>
 						<Image src='/logo-nav.png' alt='Ak keme' width='127' height='48' />
