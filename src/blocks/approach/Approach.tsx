@@ -14,7 +14,7 @@ function Approach() {
 				</p>
 			</div>
 			<div className={styles.slider}>
-				<Slider slidesPerView={3} buttonPosition='side' />
+				<Slider id='approach-slider' slidesPerView={3} buttonPosition='side' />
 			</div>
 		</section>
 	);

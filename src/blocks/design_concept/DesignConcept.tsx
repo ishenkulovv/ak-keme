@@ -16,7 +16,7 @@ function DesignConcept() {
 				</p>
 			</div>
 			<div className={styles.slider}>
-				<Slider buttonPosition='side' slidesPerView={3} />
+				<Slider id='design_slider' buttonPosition='side' slidesPerView={3} />
 			</div>
 		</section>
 	);

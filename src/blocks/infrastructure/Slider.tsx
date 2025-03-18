@@ -22,10 +22,10 @@ const slides = [
 function Slider() {
 	return (
 		<div className={styles.sliderContainer}>
-			<div className={`${styles.arrow} ${styles.prev}`} id='custom-prev'>
+			<div className={`${styles.arrow} ${styles.prev}`} id='info_custom-prev'>
 				<Image src='/icons/slider-prev.svg' alt='Prev' width={16} height={16} />
 			</div>
-			<div className={`${styles.arrow} ${styles.next}`} id='custom-next'>
+			<div className={`${styles.arrow} ${styles.next}`} id='info_custom-next'>
 				<Image src='/icons/slider-next.svg' alt='Prev' width={16} height={16} />
 			</div>
 			<Swiper
@@ -34,8 +34,8 @@ function Slider() {
 				slidesPerView={3}
 				slidesPerGroup={1}
 				navigation={{
-					nextEl: '#custom-next',
-					prevEl: '#custom-prev',
+					nextEl: '#info_custom-next',
+					prevEl: '#info_custom-prev',
 				}}
 				pagination={{ clickable: true }}
 				loop={true}

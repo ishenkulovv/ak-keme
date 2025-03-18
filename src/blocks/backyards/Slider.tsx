@@ -21,10 +21,10 @@ const array = [
 function Slider() {
 	return (
 		<>
-			<div className={`${styles.arrow} ${styles.prev}`} id='custom-prev'>
+			<div className={`${styles.arrow} ${styles.prev}`} id='yeards-custom-prev'>
 				<Image src='/icons/slider-prev.svg' alt='Prev' width={16} height={16} />
 			</div>
-			<div className={`${styles.arrow} ${styles.next}`} id='custom-next'>
+			<div className={`${styles.arrow} ${styles.next}`} id='yeards-custom-next'>
 				<Image src='/icons/slider-next.svg' alt='Prev' width={16} height={16} />
 			</div>
 			<Swiper
@@ -33,8 +33,8 @@ function Slider() {
 				centeredSlides={true} // Центрируем активный слайд
 				loop={true} // Цикличный режим
 				navigation={{
-					nextEl: '#custom-next',
-					prevEl: '#custom-prev',
+					nextEl: '#yeards-custom-next',
+					prevEl: '#yeards-custom-prev',
 				}}
 				spaceBetween={120}
 				breakpoints={{

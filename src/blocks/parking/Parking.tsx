@@ -15,7 +15,7 @@ function Parking() {
 				</p>
 			</div>
 			<div className={styles.slider}>
-				<Slider />
+				<Slider id='parking_slider' />
 			</div>
 		</section>
 	);

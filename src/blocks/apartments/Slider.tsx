@@ -34,10 +34,16 @@ function Slider() {
 			animate={isInView ? 'visible' : 'hidden'} // Активация при входе в зону видимости
 			variants={fadeInVariant}
 		>
-			<div className={`${styles.arrow} ${styles.prev}`} id='custom-prev'>
+			<div
+				className={`${styles.arrow} ${styles.prev}`}
+				id='apartments-custom-prev'
+			>
 				<Image src='/icons/slider-prev.svg' alt='Prev' width={16} height={16} />
 			</div>
-			<div className={`${styles.arrow} ${styles.next}`} id='custom-next'>
+			<div
+				className={`${styles.arrow} ${styles.next}`}
+				id='apartments-custom-next'
+			>
 				<Image src='/icons/slider-next.svg' alt='Prev' width={16} height={16} />
 			</div>
 			<Swiper
@@ -46,8 +52,8 @@ function Slider() {
 				slidesPerView={1.4}
 				slidesPerGroup={1}
 				navigation={{
-					nextEl: '#custom-next',
-					prevEl: '#custom-prev',
+					nextEl: '#apartments-custom-next',
+					prevEl: '#apartments-custom-prev',
 				}}
 				pagination={{ clickable: true }}
 				loop={true}

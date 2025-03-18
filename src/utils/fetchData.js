@@ -6,8 +6,8 @@ export const fetchData = async () => {
 
 export const transformData = posts => {
 	return {
-		header_kg: { ...posts.header, title: posts.header.text.kg },
-		header_ru: { ...posts.header, title: posts.header.text.ru },
+		header_kg: { ...posts.header, title: posts.header.text?.kg },
+		header_ru: { ...posts.header, title: posts.header.text?.ru },
 
 		hero_kg: {
 			...posts.hero,
@@ -99,11 +99,11 @@ export const transformData = posts => {
 
 		documentation_kg: {
 			...posts.documentations,
-			title: posts.documentations.title.kg,
+			title: posts.documentations.title?.kg,
 		},
 		documentation_ru: {
 			...posts.documentations,
-			title: posts.documentations.title.ru,
+			title: posts.documentations.title?.ru,
 		},
 
 		contact_kg: {
