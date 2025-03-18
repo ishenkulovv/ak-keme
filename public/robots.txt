@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://ak-keme.vercel.app
+
+# Sitemaps
+Sitemap: https://ak-keme.vercel.app/sitemap.xml

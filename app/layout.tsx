@@ -44,6 +44,9 @@ export const metadata: Metadata = {
 			'Это современный многофункциональный центр отдыха и жилья, расположенный на живописном побережье озера Иссык-Куль. Наш центр основан на идее гармонии между природой и современным комфортом.',
 		images: ['/images/logo.png'],
 	},
+	alternates: {
+		canonical: 'https://ak-keme.vercel.app/',
+	},
 };
 
 export default function RootLayout({
