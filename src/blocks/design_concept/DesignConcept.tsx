@@ -16,7 +16,17 @@ function DesignConcept() {
 				</p>
 			</div>
 			<div className={styles.slider}>
-				<Slider id='design_slider' buttonPosition='side' slidesPerView={3} />
+				<Slider
+					id='design_slider'
+					buttonPosition='side'
+					slidesPerView={1}
+					loop
+					breakpoints={{
+						320: { slidesPerView: 1 },
+						501: { slidesPerView: 2 },
+						1100: { slidesPerView: 3 },
+					}}
+				/>
 			</div>
 		</section>
 	);
