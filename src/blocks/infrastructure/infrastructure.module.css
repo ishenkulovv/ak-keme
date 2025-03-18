@@ -141,6 +141,11 @@
 	margin-top: 20px;
 }
 
+.slider_image img {
+	border-radius: 8px;
+	object-fit: cover;
+}
+
 .arrow {
 	display: flex;
 	align-items: center;
@@ -333,5 +338,8 @@
 	}
 	.block_image {
 		height: 350px;
+	}
+	.sliderContainer .arrow {
+		display: none;
 	}
 }

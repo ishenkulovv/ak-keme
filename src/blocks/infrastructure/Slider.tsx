@@ -30,7 +30,7 @@ function Slider() {
 			</div>
 			<Swiper
 				modules={[Navigation]}
-				spaceBetween={30}
+				spaceBetween={20}
 				slidesPerView={3}
 				slidesPerGroup={1}
 				navigation={{
@@ -40,8 +40,9 @@ function Slider() {
 				pagination={{ clickable: true }}
 				loop={true}
 				breakpoints={{
-					320: { slidesPerView: 1 },
-					768: { slidesPerView: 2 },
+					320: { slidesPerView: 1.4 },
+					550: { slidesPerView: 2.2 },
+					768: { slidesPerView: 2.9 },
 					1024: { slidesPerView: 3.5 },
 					1460: { slidesPerView: 5 },
 				}}
