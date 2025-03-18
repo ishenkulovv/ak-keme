@@ -177,10 +177,12 @@
 	align-items: center;
 	justify-content: center;
 	padding-top: 80px;
-	margin-top: 80px;
 	padding-left: 10px;
 	padding-right: 10px;
 	position: relative;
+	background-color: var(--light);
+	position: relative;
+	z-index: 5;
 }
 
 .model_image,
@@ -188,7 +190,7 @@
 	border-radius: 6px;
 	width: 100%;
 	max-width: 1440px;
-	height: auto;
+	object-fit: cover;
 }
 
 .rain {
@@ -287,6 +289,11 @@
 		padding-top: 40px;
 		padding-bottom: 40px;
 	}
+	.model {
+		padding-top: 40px;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
 	.image {
 		margin-top: 40px;
 	}
@@ -341,5 +348,12 @@
 	}
 	.sliderContainer .arrow {
 		display: none;
+	}
+	.model_image,
+	.rain {
+		height: 450px;
+	}
+	.model_switch {
+		bottom: 20px;
 	}
 }

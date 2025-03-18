@@ -69,10 +69,10 @@ function Infrastructure() {
 				<div className={styles.slider}>
 					<Slider />
 				</div>
-				<div className={styles.model}>
-					<Model />
-				</div>
 			</section>
+			<div className={styles.model}>
+				<Model />
+			</div>
 		</>
 	);
 }
