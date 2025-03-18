@@ -31,7 +31,7 @@ function Idea({ data }: Props) {
 					</div>
 				</div>
 				<div className={styles.slider}>
-					<Slider id='idea_slider' images={data.slider_images} mini />
+					<Slider id='idea_slider' loop images={data.slider_images} mini />
 				</div>
 			</div>
 		</div>

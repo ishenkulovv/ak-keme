@@ -19,6 +19,8 @@ interface SliderProps {
 	mini?: boolean;
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	breakpoints?: any;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	sliderItemClass?: any;
 }
 
 function Slider({
@@ -30,6 +32,7 @@ function Slider({
 	images,
 	mini,
 	breakpoints,
+	sliderItemClass,
 }: SliderProps) {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const sliderRef = React.useRef<any>(null);
@@ -42,7 +45,7 @@ function Slider({
 					alt='Slide 1'
 					width={1420}
 					height={680}
-					className={styles.image}
+					className={clsx(styles.image, sliderItemClass)}
 				/>
 			</SwiperSlide>
 			<SwiperSlide>
@@ -51,7 +54,7 @@ function Slider({
 					alt='Slide 1'
 					width={1420}
 					height={680}
-					className={styles.image}
+					className={clsx(styles.image, sliderItemClass)}
 				/>
 			</SwiperSlide>
 			<SwiperSlide>
@@ -60,7 +63,7 @@ function Slider({
 					alt='Slide 1'
 					width={1420}
 					height={680}
-					className={styles.image}
+					className={clsx(styles.image, sliderItemClass)}
 				/>
 			</SwiperSlide>
 			<SwiperSlide>
@@ -69,7 +72,7 @@ function Slider({
 					alt='Slide 1'
 					width={1420}
 					height={680}
-					className={styles.image}
+					className={clsx(styles.image, sliderItemClass)}
 				/>
 			</SwiperSlide>
 		</>
