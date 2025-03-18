@@ -22,7 +22,7 @@
 	margin: 0 auto; /* Центрирует контейнер */
 	padding-left: 0; /* Убираем стандартный отступ */
 	width: 100%; /* Полный доступ к ширине экрана */
-	/* margin-left: calc((100vw - 1200px) / 2); */
+	margin-left: calc((100vw - 1200px) / 2);
 	margin-top: 80px;
 }
 
@@ -162,6 +162,7 @@
 	}
 	.slider {
 		margin-top: 40px;
+		margin-left: 20px;
 	}
 }
 
