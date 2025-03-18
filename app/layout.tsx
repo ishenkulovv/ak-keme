@@ -56,6 +56,11 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='ru' className={(manrope.className, great_vibes.className)}>
+			<head>
+				<meta charSet='UTF-8' />
+				<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+				<link rel='icon' href='/favicon.ico' />
+			</head>
 			<body>
 				<LenisWrapper>{children}</LenisWrapper>
 
