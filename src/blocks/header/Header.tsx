@@ -3,14 +3,12 @@ import styles from './header.module.css';
 import { MotionDiv } from '@/src/components';
 
 interface Props {
-	data: {
-		background_image: string;
-		building_image: string;
-		title: string;
-	};
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	data: any;
+	lang?: 'kg' | 'ru';
 }
 
-function Header({ data }: Props) {
+function Header({ data, lang = 'ru' }: Props) {
 	return (
 		<div className={styles.header}>
 			<MotionDiv
@@ -47,7 +45,7 @@ function Header({ data }: Props) {
 				animate={{ opacity: 1 }}
 				transition={{ duration: 1.2, ease: 'easeOut', delay: 1.3 }}
 			>
-				<h1 className={styles.title}>{data.title}</h1>
+				<h1 className={styles.title}>{data.text[lang]}</h1>
 			</MotionDiv>
 		</div>
 	);

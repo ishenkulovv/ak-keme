@@ -16,7 +16,8 @@ const fadeInVariant = {
 	},
 };
 
-function Model() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function Model({ data }: { data: any }) {
 	const [nightView, setNightView] = React.useState(false);
 	const ref = React.useRef(null);
 	const isInView = useInView(ref, {
@@ -32,7 +33,7 @@ function Model() {
 			variants={fadeInVariant}
 		>
 			<Image
-				src='/images/model_day.png'
+				src={data.light_image}
 				width={1440}
 				height={650}
 				alt='Model'
@@ -40,7 +41,7 @@ function Model() {
 				style={{ display: nightView ? 'block' : 'none' }}
 			/>
 			<Image
-				src='/images/model_night.png'
+				src={data.dark_image}
 				width={1440}
 				height={650}
 				alt='Model'

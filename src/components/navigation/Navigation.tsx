@@ -14,9 +14,12 @@ interface Props {
 		value: string;
 		label: string;
 	}[];
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	data: any;
+	lang?: 'kg' | 'ru';
 }
 
-function Navigation({ options }: Props) {
+function Navigation({ options, data, lang = 'ru' }: Props) {
 	const [burgerVisible, setBurgerVisible] = React.useState(false);
 	const handleLang = (value: string) => {
 		window.location.href = value;
@@ -55,51 +58,51 @@ function Navigation({ options }: Props) {
 						<div className={styles.burger_content}>
 							<div className={styles.burger_links}>
 								<Link className={styles.burger_link} href=''>
-									О нас
+									{data.nav_about_us[lang]}
 								</Link>
 								<Link className={styles.burger_link} href=''>
-									Инфраструктура
+									{data.nav_infostructure[lang]}
 								</Link>
 								<Link className={styles.burger_link} href=''>
-									Проект
+									{data.nav_project[lang]}
 								</Link>
 								<Link className={styles.burger_link} href=''>
-									Контакты
+									{data.nav_contacts[lang]}
 								</Link>
 							</div>
 							<div className={styles.burger_socials}>
 								<FooterSocials />
 							</div>
 							<div className={styles.burger_button}>
-								<Button>Связаться с нами</Button>
+								<Button>{data.nav_contact_us[lang]}</Button>
 							</div>
 						</div>
 					)}
 					<ul className={styles.list}>
 						<li className={styles.item}>
 							<Link className={styles.link} href=''>
-								О нас
+								{data.nav_about_us[lang]}
 							</Link>
 						</li>
 						<li className={styles.item}>
 							<Link className={styles.link} href=''>
-								Инфраструктура
+								{data.nav_infostructure[lang]}
 							</Link>
 						</li>
 						<li className={styles.item}>
 							<Link className={styles.link} href=''>
-								Проект
+								{data.nav_project[lang]}
 							</Link>
 						</li>
 						<li className={styles.item}>
 							<Link className={styles.link} href=''>
-								Контакты{' '}
+								{data.nav_contacts[lang]}
 							</Link>
 						</li>
 					</ul>
 					<div className={styles.actions}>
 						<div className={styles.button}>
-							<Button>Связаться с нами</Button>
+							<Button>{data.nav_contact_us[lang]}</Button>
 						</div>
 						<div className={styles.select}>
 							<Select

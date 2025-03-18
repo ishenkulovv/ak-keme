@@ -5,28 +5,22 @@ import Idea from '../idea/Idea';
 import { formattedText } from '@/src/utils/formattedText';
 
 interface Props {
-	data: {
-		content: string;
-		slider_images: string[];
-		title: string;
-		writer: {
-			content: string;
-			phrase: string;
-			phrase_source: string;
-			slider_images: string[];
-		};
-	};
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	data: any;
+	lang?: 'kg' | 'ru';
 }
 
-function Hero({ data }: Props) {
+function Hero({ data, lang = 'ru' }: Props) {
 	return (
 		<section className={styles.main}>
 			<div className={styles.wrapper}>
 				<div className={global.container}>
-					<h2 className={styles.title}>{data.title}</h2>
+					<h2 className={styles.title}>{data.title[lang]}</h2>
 					<p
 						className={styles.description}
-						dangerouslySetInnerHTML={{ __html: formattedText(data.content) }}
+						dangerouslySetInnerHTML={{
+							__html: formattedText(data.content[lang]),
+						}}
 					/>
 				</div>
 				<div className={styles.slider}>
@@ -47,7 +41,7 @@ function Hero({ data }: Props) {
 					/>
 				</div>
 			</div>
-			<Idea data={data.writer} />
+			<Idea data={data.writer} lang={lang} />
 		</section>
 	);
 }

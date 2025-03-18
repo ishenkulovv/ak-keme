@@ -15,8 +15,9 @@ const fadeInVariant = {
 	},
 };
 
-function Plan() {
-	const [view, setView] = React.useState<boolean>(true);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function Plan({ data }: { data: any }) {
+	const [view, setView] = React.useState<boolean>(false);
 	const ref = React.useRef(null);
 	const isInView = useInView(ref, {
 		amount: 0.6, // ✅ Триггерится, когда 60% блока в зоне видимости
@@ -32,7 +33,7 @@ function Plan() {
 		>
 			{!view ? (
 				<Image
-					src='/images/general_plan_1.png'
+					src={data.image_2d}
 					alt='General Plan'
 					width={1200}
 					height={680}
@@ -40,7 +41,7 @@ function Plan() {
 				/>
 			) : (
 				<Image
-					src='/images/general_plan_2.png'
+					src={data.image_3d}
 					alt='General Plan'
 					width={1200}
 					height={680}

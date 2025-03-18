@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import Image from 'next/image';
@@ -9,17 +10,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import styles from './infrastructure.module.css';
 
-const slides = [
-	{ src: '/images/slider_1.png', title: 'Теннисный корт' },
-	{ src: '/images/slider_2.png', title: 'Детская площадка' },
-	{ src: '/images/slider_3.png', title: 'Ресторан на террасе' },
-	{ src: '/images/slider_1.png', title: 'Бассейн' },
-	{ src: '/images/slider_2.png', title: 'Детская площадка' },
-	{ src: '/images/slider_3.png', title: 'Ресторан на террасе' },
-	{ src: '/images/slider_1.png', title: 'Бассейн' },
-];
-
-function Slider() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function Slider({ data, lang = 'ru' }: { data: any; lang?: 'ru' | 'kg' }) {
 	return (
 		<div className={styles.sliderContainer}>
 			<div className={`${styles.arrow} ${styles.prev}`} id='info_custom-prev'>
@@ -48,13 +40,13 @@ function Slider() {
 				}}
 				className={styles.swiper}
 			>
-				{slides.map((slide, index) => (
+				{data.map((slide: any, index: number) => (
 					<SwiperSlide key={index} className={styles.slide}>
 						<div className={styles.slider_item}>
 							<div className={styles.slider_image}>
-								<Image src={slide.src} width={280} height={330} alt='test' />
+								<Image src={slide.image} width={280} height={330} alt='test' />
 							</div>
-							<div className={styles.slider_title}>{slide.title}</div>
+							<div className={styles.slider_title}>{slide.title[lang]}</div>
 						</div>
 					</SwiperSlide>
 				))}

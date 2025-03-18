@@ -44,6 +44,11 @@
 	margin-top: 40px;
 }
 
+.image {
+	object-fit: cover;
+	border-radius: 8px;
+}
+
 .block {
 	display: flex;
 	align-items: flex-start;

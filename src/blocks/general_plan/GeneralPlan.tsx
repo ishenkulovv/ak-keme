@@ -1,13 +1,14 @@
 import styles from './general_plan.module.css';
 import Plan from './Plan';
 
-function GeneralPlan() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function GeneralPlan({ data, lang = 'ru' }: { data: any; lang?: 'ru' | 'kg' }) {
 	return (
 		<section className={styles.main}>
 			<div className={styles.container}>
-				<h2 className={styles.title}>Генплан</h2>
+				<h2 className={styles.title}>{data.title[lang]}</h2>
 				<div className={styles.content}>
-					<Plan />
+					<Plan data={data} />
 				</div>
 			</div>
 		</section>

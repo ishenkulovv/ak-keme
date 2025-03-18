@@ -5,15 +5,12 @@ import { formattedText } from '@/src/utils/formattedText';
 import clsx from 'clsx';
 
 interface Props {
-	data: {
-		content: string;
-		phrase: string;
-		phrase_source: string;
-		slider_images: string[];
-	};
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	data: any;
+	lang?: 'kg' | 'ru';
 }
 
-function Idea({ data }: Props) {
+function Idea({ data, lang = 'ru' }: Props) {
 	return (
 		<div className={styles.main}>
 			<div className={clsx(global.container, styles.wrapper)}>
@@ -21,13 +18,15 @@ function Idea({ data }: Props) {
 					<div>
 						<h3
 							className={styles.title}
-							dangerouslySetInnerHTML={{ __html: formattedText(data.content) }}
+							dangerouslySetInnerHTML={{
+								__html: formattedText(data.content[lang]),
+							}}
 						/>
 						<p className={styles.descr}></p>
 					</div>
 					<div className={styles.quot}>
-						<p>{data.phrase}</p>
-						<div>{data.phrase_source}</div>
+						<p>{data.phrase[lang]}</p>
+						<div>{data.phrase_source[lang]}</div>
 					</div>
 				</div>
 				<div className={styles.slider}>

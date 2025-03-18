@@ -1,7 +1,15 @@
+export const fetchDataTransform = async () => {
+	const res = await fetch('https://back.ak-keme.kg/api/content');
+	const posts = await res.json();
+
+	return transformData(posts);
+};
+
 export const fetchData = async () => {
 	const res = await fetch('https://back.ak-keme.kg/api/content');
 	const posts = await res.json();
-	return transformData(posts);
+
+	return posts;
 };
 
 export const transformData = posts => {
@@ -13,11 +21,13 @@ export const transformData = posts => {
 			...posts.hero,
 			title: posts.hero.title.kg,
 			content: posts.hero.content.kg,
+			slider_images: posts.hero.slider_images,
 		},
 		hero_ru: {
 			...posts.hero,
 			title: posts.hero.title.ru,
 			content: posts.hero.content.ru,
+			slider_images: posts.hero.slider_images,
 		},
 
 		writer_kg: {
@@ -25,32 +35,52 @@ export const transformData = posts => {
 			content: posts.writer.content.kg,
 			phrase: posts.writer.phrase.kg,
 			phrase_source: posts.writer.phrase_source.kg,
+			slider_images: posts.writer.slider_images,
 		},
 		writer_ru: {
 			...posts.writer,
 			content: posts.writer.content.ru,
 			phrase: posts.writer.phrase.ru,
 			phrase_source: posts.writer.phrase_source.ru,
+			slider_images: posts.writer.slider_images,
 		},
+
+		philosophy_kg: posts.philosophy.slider.map(slide => ({
+			...slide,
+			title: slide.title.kg,
+			content: slide.content.kg,
+		})),
+		philosophy_ru: posts.philosophy.slider.map(slide => ({
+			...slide,
+			title: slide.title.ru,
+			content: slide.content.ru,
+		})),
 
 		nature_kg: {
 			...posts.nature,
 			title: posts.nature.title.kg,
 			content: posts.nature.content.kg,
+			slider_images: posts.nature.slider_images,
 		},
 		nature_ru: {
 			...posts.nature,
 			title: posts.nature.title.ru,
 			content: posts.nature.content.ru,
+			slider_images: posts.nature.slider_images,
 		},
 
-		geoplan_kg: {
-			...posts.geoplan,
-			title: posts.geoplan.title.kg,
+		geoplan_kg: { ...posts.geoplan, title: posts.geoplan.title.kg },
+		geoplan_ru: { ...posts.geoplan, title: posts.geoplan.title.ru },
+
+		infrastructure_kg: {
+			...posts.infrastructure,
+			title: posts.infrastructure.title.kg,
+			content: posts.infrastructure.content.kg,
 		},
-		geoplan_ru: {
-			...posts.geoplan,
-			title: posts.geoplan.title.ru,
+		infrastructure_ru: {
+			...posts.infrastructure,
+			title: posts.infrastructure.title.ru,
+			content: posts.infrastructure.content.ru,
 		},
 
 		apartments_kg: posts.apartments.map(apartment => ({
@@ -97,14 +127,14 @@ export const transformData = posts => {
 			content: posts.parking.content.ru,
 		},
 
-		documentation_kg: {
-			...posts.documentations,
-			title: posts.documentations.title?.kg,
-		},
-		documentation_ru: {
-			...posts.documentations,
-			title: posts.documentations.title?.ru,
-		},
+		documentation_kg: posts.documentations.map(doc => ({
+			...doc,
+			title: doc.title.kg,
+		})),
+		documentation_ru: posts.documentations.map(doc => ({
+			...doc,
+			title: doc.title.ru,
+		})),
 
 		contact_kg: {
 			...posts.contact,

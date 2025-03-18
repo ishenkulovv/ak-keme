@@ -30,19 +30,17 @@ const optionsLang = [
 ];
 
 export default async function Home() {
-	const transformedData = await fetchData();
-
+	const data = await fetchData();
+	console.log(data);
 	return (
 		<div className={styles.page}>
-			<Navigation options={optionsLang} />
-			<Header data={transformedData.header_kg} />
-			<Hero
-				data={{ ...transformedData.hero_kg, writer: transformedData.writer_kg }}
-			/>
-			<Philosophy />
-			<DesignConcept />
-			<GeneralPlan />
-			<Infrastructure />
+			<Navigation options={optionsLang} data={data.translations} lang='kg' />
+			<Header data={data.header} lang='kg' />
+			<Hero data={{ ...data.hero, writer: data.writer }} lang='kg' />
+			<Philosophy data={data.philosophy} lang='kg' />
+			<DesignConcept data={data.nature} lang='kg' />
+			<GeneralPlan data={data.geoplan} lang='kg' />
+			<Infrastructure data={data.infrastructure} lang='kg' />
 			<Apartments />
 			<Backyards />
 			<Approach />
