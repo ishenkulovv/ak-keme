@@ -43,7 +43,7 @@ function Slider() {
 					320: { slidesPerView: 1 },
 					768: { slidesPerView: 2 },
 					1024: { slidesPerView: 3.5 },
-					1324: { slidesPerView: 5 },
+					1460: { slidesPerView: 5 },
 				}}
 				className={styles.swiper}
 			>

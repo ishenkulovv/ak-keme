@@ -11,7 +11,7 @@ const fadeInVariant = {
 	visible: {
 		opacity: 1,
 		y: 0,
-		transition: { duration: 0.8 }, // Плавное появление
+		transition: { duration: 0.5 }, // Плавное появление
 	},
 };
 
