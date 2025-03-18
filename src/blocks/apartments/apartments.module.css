@@ -22,7 +22,7 @@
 	margin: 0 auto; /* Центрирует контейнер */
 	padding-left: 0; /* Убираем стандартный отступ */
 	width: 100%; /* Полный доступ к ширине экрана */
-	margin-left: calc((100vw - 1200px) / 2);
+	/* margin-left: calc((100vw - 1200px) / 2); */
 	margin-top: 80px;
 }
 
@@ -156,5 +156,76 @@
 @media (max-width: 1250px) {
 	.next {
 		right: 0px;
+	}
+	.title {
+		padding: 0px 20px;
+	}
+	.slider {
+		margin-top: 40px;
+	}
+}
+
+@media (max-width: 768px) {
+	.main {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+	.slider {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.slider_item {
+		flex-direction: column;
+		max-width: 400px;
+	}
+	.slider_texts {
+		padding-top: 40px;
+		max-width: 400px;
+	}
+	.slider_view {
+		padding: 20px;
+	}
+}
+
+@media (max-width: 500px) {
+	.slider {
+		padding-left: 20px;
+		padding-right: 0px;
+	}
+	.slider_item {
+		flex-direction: column;
+		max-width: 350px;
+	}
+	.slider_texts {
+		max-width: 350px;
+	}
+	.slider_item_index {
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 150%;
+		letter-spacing: 0%;
+	}
+	.slider_item_title {
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 150%;
+		letter-spacing: 0%;
+		vertical-align: middle;
+	}
+	.slider_item_descr {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 150%;
+		letter-spacing: 0%;
+		vertical-align: middle;
+		margin-top: 16px;
+	}
+	.slider_switch {
+		margin-top: 20px;
+	}
+	.slider_images img {
+		width: 255px;
+		height: 252px;
+		min-height: auto;
 	}
 }

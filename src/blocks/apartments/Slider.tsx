@@ -48,8 +48,8 @@ function Slider() {
 			</div>
 			<Swiper
 				modules={[Navigation]}
-				spaceBetween={50}
-				slidesPerView={1.4}
+				spaceBetween={20}
+				slidesPerView={1.1}
 				slidesPerGroup={1}
 				navigation={{
 					nextEl: '#apartments-custom-next',
@@ -58,8 +58,8 @@ function Slider() {
 				pagination={{ clickable: true }}
 				loop={true}
 				breakpoints={{
-					320: { slidesPerView: 1 },
-					768: { slidesPerView: 1.1 },
+					320: { slidesPerView: 1.1 },
+					768: { slidesPerView: 1.4 },
 					1024: { slidesPerView: 1.3 },
 					1324: { slidesPerView: 1.5 },
 				}}
