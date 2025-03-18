@@ -25,6 +25,7 @@ function Header({ data }: Props) {
 					className={styles.sky}
 					width={1440}
 					height={800}
+					priority
 				/>
 			</MotionDiv>
 			<MotionDiv
@@ -34,10 +35,11 @@ function Header({ data }: Props) {
 			>
 				<Image
 					src={data.building_image}
-					alt='Sky'
+					alt='Build'
 					className={styles.build}
 					width={1200}
 					height={668}
+					priority
 				/>
 			</MotionDiv>
 			<MotionDiv

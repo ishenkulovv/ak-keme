@@ -36,7 +36,7 @@ function Plan() {
 					alt='General Plan'
 					width={1200}
 					height={680}
-					onClick={() => setView(!view)}
+					priority
 				/>
 			) : (
 				<Image
@@ -44,6 +44,7 @@ function Plan() {
 					alt='General Plan'
 					width={1200}
 					height={680}
+					priority
 				/>
 			)}
 
