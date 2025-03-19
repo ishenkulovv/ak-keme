@@ -40,7 +40,10 @@ export default async function Home() {
 			<DesignConcept data={data.nature} lang='kg' />
 			<GeneralPlan data={data.geoplan} lang='kg' />
 			<Infrastructure data={data.infrastructure} lang='kg' />
-			<Apartments />
+			<Apartments
+				data={{ apartments_a: data.apartments, ...data.translations }}
+				lang='kg'
+			/>
 			<Backyards data={data.yard} lang='kg' />
 			<Approach data={data.entrance} lang='kg' />
 			<Parking data={data.parking} lang='kg' />

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import React from 'react';
@@ -13,25 +14,25 @@ import { MotionDiv } from '@/src/components';
 import { useInView } from 'framer-motion';
 
 const fadeInVariant = {
-	hidden: { opacity: 0, y: 350 }, // Начальное состояние (невидимый + смещённый вниз)
+	hidden: { opacity: 0, y: 350 },
 	visible: {
 		opacity: 1,
 		y: 0,
-		transition: { duration: 0.7 }, // Плавное появление
+		transition: { duration: 0.7 },
 	},
 };
 
-function Slider() {
+function Slider({ data, lang = 'ru' }: { data: any; lang?: 'ru' | 'kg' }) {
 	const ref = React.useRef(null);
 	const isInView = useInView(ref, {
-		amount: 0.4, // ✅ Триггерится, когда 60% блока в зоне видимости
-		once: true, // ✅ Анимация срабатывает только один раз
+		amount: 0.4,
+		once: true,
 	});
 	return (
 		<MotionDiv
 			ref={ref}
 			initial='hidden'
-			animate={isInView ? 'visible' : 'hidden'} // Активация при входе в зону видимости
+			animate={isInView ? 'visible' : 'hidden'}
 			variants={fadeInVariant}
 		>
 			<div
@@ -65,9 +66,9 @@ function Slider() {
 				}}
 				className={styles.slider}
 			>
-				{Array.from({ length: 10 }, (_, i) => (
-					<SwiperSlide key={i}>
-						<SliderItem />
+				{data?.map((item: any, index: number) => (
+					<SwiperSlide key={index}>
+						<SliderItem item={item} index={index + 1} lang={lang} />
 					</SwiperSlide>
 				))}
 			</Swiper>
