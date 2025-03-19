@@ -1,20 +1,22 @@
 import global from '@/src/styles/global_styles.module.css';
 import styles from './parking.module.css';
 import SliderDesign from './SliderC';
+import { formattedText } from '@/src/utils/formattedText';
 
-function Parking() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function Parking({ data, lang = 'ru' }: { data: any; lang?: 'ru' | 'kg' }) {
 	return (
 		<section className={styles.main}>
 			<div className={global.container}>
-				<h2 className={styles.title}>Паркинг</h2>
-				<p className={styles.description}>
-					Паркинг — продуманное пространство, сочетающее стиль и
-					функциональность. Дизайнерские элементы создают атмосферу уюта.
-					Удобная навигация и мягкое освещение делают передвижение комфортным и
-					приятным.
-				</p>
+				<h2 className={styles.title}>{data.title[lang]}</h2>
+				<p
+					className={styles.description}
+					dangerouslySetInnerHTML={{
+						__html: formattedText(data.content[lang]),
+					}}
+				/>
 			</div>
-			<SliderDesign />
+			<SliderDesign images={data.images} />
 		</section>
 	);
 }

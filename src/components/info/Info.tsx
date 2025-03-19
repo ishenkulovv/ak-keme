@@ -1,17 +1,18 @@
 import styles from './styles.module.css';
 
-function Info() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function Info({ data, lang = 'ru' }: { data: any; lang?: 'ru' | 'kg' }) {
 	return (
 		<>
 			<p className={styles.contact_text}>
-				<span>Адрес:</span> Бишкек, ул. Тыныстанова, 12
+				<span>{data?.address_key[lang]}</span> {data?.address}
 			</p>
-			<p className={styles.contact_text}>Пн-Вс 09:00-21:00 </p>
+			<p className={styles.contact_text}>{data?.open_time_text[lang]}</p>
 			<p className={styles.contact_text}>
-				<span>Телефон:</span> +996 700 123 456
+				<span>{data?.phone_key[lang]}</span> {data?.phone}
 			</p>
 			<p className={styles.contact_text}>
-				<span>Почта:</span> <a href='mail:akkeme@mail.com'>akkeme@mail.com</a>
+				<span>Почта:</span> <a href='mail:akkeme@mail.com'>{data?.email}</a>
 			</p>
 		</>
 	);

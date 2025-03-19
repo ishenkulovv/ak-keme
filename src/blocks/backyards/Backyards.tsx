@@ -2,22 +2,23 @@ import global from '@/src/styles/global_styles.module.css';
 import styles from './backyards.module.css';
 import Slider from './Slider';
 import clsx from 'clsx';
+import { formattedText } from '@/src/utils/formattedText';
 
-function Backyards() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function Backyards({ data, lang = 'ru' }: { data: any; lang?: 'ru' | 'kg' }) {
 	return (
 		<section className={clsx(styles.main, 'backyards')}>
 			<div className={global.container}>
-				<h2 className={styles.title}>Дворы</h2>
-				<p className={styles.descr}>
-					Дворы спроектированы, сочетая в себе функциональность и комфорт. Здесь
-					предусмотрены зоны для отдыха и неспешных бесед, а также зеленые
-					пространства, создающие атмосферу уединения и спокойствия. Это место,
-					где можно насладиться тишиной и уединением, не покидая территорию
-					курорта.
-				</p>
+				<h2 className={styles.title}>{data.title[lang]}</h2>
+				<p
+					className={styles.descr}
+					dangerouslySetInnerHTML={{
+						__html: formattedText(data.content[lang]),
+					}}
+				/>
 			</div>
 			<div className={styles.slider}>
-				<Slider />
+				<Slider images={data.images} />
 			</div>
 		</section>
 	);

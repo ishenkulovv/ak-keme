@@ -37,7 +37,6 @@ function Slider({
 	spaceBetween = 20,
 }: SliderProps) {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	const sliderRef = React.useRef<any>(null);
 
 	const renderDefault = () => (
 		<>
@@ -85,14 +84,10 @@ function Slider({
 			<Swiper
 				slidesPerView={slidesPerView}
 				spaceBetween={spaceBetween}
-				ref={sliderRef}
 				modules={[Navigation]}
 				className={styles.swiper}
 				loop={loop}
 				centeredSlides={centeredSlides}
-				coverflowEffect={{
-					stretch: 100,
-				}}
 				navigation={{
 					nextEl: `#${id}_next`,
 					prevEl: `#${id}_prev`,

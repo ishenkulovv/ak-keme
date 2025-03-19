@@ -15,7 +15,11 @@ function Philosophy({ data, lang = 'ru' }: { data: any; lang?: 'kg' | 'ru' }) {
 	useAnimate();
 
 	return (
-		<section className={styles.main} id='main_ph'>
+		<section
+			className={styles.main}
+			style={{ height: 950 * data?.slider?.length || 1 }}
+			id='main_ph'
+		>
 			<div className={clsx(global.container, styles.wrapper)} id='trigger'>
 				<div id='animate_block'>
 					<h2 className={styles.title} id='title'>
@@ -33,7 +37,7 @@ function Philosophy({ data, lang = 'ru' }: { data: any; lang?: 'kg' | 'ru' }) {
 							// eslint-disable-next-line @typescript-eslint/no-explicit-any
 							(item: any, index: number) => (
 								<div
-									className={styles.block}
+									className={clsx(styles.block, 'ph_block')}
 									id={`block_${index + 1}`}
 									key={index}
 								>

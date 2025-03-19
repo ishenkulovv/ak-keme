@@ -18,7 +18,7 @@ const array = [
 	'/images/infast_4.png',
 ];
 
-function Slider() {
+function Slider({ images }: { images: string[] }) {
 	return (
 		<>
 			<div className={`${styles.arrow} ${styles.prev}`} id='yeards-custom-prev'>
@@ -47,7 +47,7 @@ function Slider() {
 				}}
 				className={styles.slider}
 			>
-				{array.map((src, index) => (
+				{images.map((src, index) => (
 					<SwiperSlide key={index}>
 						<Image
 							src={src}

@@ -5,9 +5,15 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
+
 export const useAnimate = () => {
 	const interval = 600;
+
 	React.useEffect(() => {
+		const blocks = Array.from(document.querySelectorAll('[id^="block_"]')).map(
+			block => block.id
+		);
+
 		gsap.to('#animate_block', {
 			scrollTrigger: {
 				trigger: '#main_ph',
@@ -23,47 +29,48 @@ export const useAnimate = () => {
 				},
 			},
 		});
-		gsap.to('#block_1', {
-			scrollTrigger: {
-				trigger: '#main_ph',
-				start: '300px',
-				end: `${300 + interval}px`,
-				scrub: 1,
-				onLeave: () => {
-					document.getElementById('block_1')?.classList.add('leave');
-					document.getElementById('block_2')?.classList.add('animated');
+
+		blocks.forEach((block, index) => {
+			gsap.to(`#${block}`, {
+				scrollTrigger: {
+					trigger: '#main_ph',
+					start: `${300 + interval * index}px`,
+					end: `${300 + interval * (index + 1)}px`,
+					scrub: 1,
+					onEnter: () => {
+						if (index > 0) {
+							document
+								.getElementById(blocks[index - 1])
+								?.classList.add('leave');
+						}
+						document.getElementById(block)?.classList.add('animated');
+					},
+					onLeave: () => {
+						if (index < blocks.length - 1) {
+							document.getElementById(block)?.classList.add('leave');
+							document
+								.getElementById(blocks[index + 1])
+								?.classList.add('animated');
+						}
+					},
+					onEnterBack: () => {
+						document.getElementById(block)?.classList.remove('leave');
+						if (blocks[index + 1]) {
+							document
+								.getElementById(blocks[index + 1])
+								?.classList.remove('animated');
+						}
+					},
+					onLeaveBack: () => {
+						if (index > 0) {
+							document
+								.getElementById(blocks[index - 1])
+								?.classList.remove('leave');
+						}
+						document.getElementById(block)?.classList.remove('animated');
+					},
 				},
-				onLeaveBack: () =>
-					document.getElementById('block_1')?.classList.remove('leave'),
-				onEnterBack: () => {
-					document.getElementById('block_2')?.classList.remove('animated');
-					document.getElementById('block_1')?.classList.remove('leave');
-				},
-			},
-		});
-		gsap.to('#block_3', {
-			scrollTrigger: {
-				trigger: '#main_ph',
-				start: `${300 + interval * 2}px`, // 👈 Единый шаг
-				end: `${300 + interval * 3}px`,
-				scrub: 1,
-				onEnter: () => {
-					document.getElementById('block_2')?.classList.add('leave');
-					document.getElementById('block_3')?.classList.add('animated');
-				},
-				onLeave: () => {
-					document.getElementById('block_3')?.classList.add('leave');
-					document.getElementById('block_4')?.classList.add('animated');
-				},
-				onEnterBack: () => {
-					document.getElementById('block_3')?.classList.remove('leave');
-					document.getElementById('block_4')?.classList.remove('animated');
-				},
-				onLeaveBack: () => {
-					document.getElementById('block_2')?.classList.remove('leave');
-					document.getElementById('block_3')?.classList.remove('animated');
-				},
-			},
+			});
 		});
 	}, []);
 };

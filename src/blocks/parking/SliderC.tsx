@@ -4,7 +4,7 @@ import { useMediaQuery } from 'react-responsive';
 import styles from './parking.module.css';
 import { Slider } from '@/src/components';
 
-function SliderDesign() {
+function SliderDesign({ images }: { images: string[] }) {
 	const isMobile = useMediaQuery({ maxWidth: 768 });
 	return (
 		<div className={styles.slider}>
@@ -13,6 +13,7 @@ function SliderDesign() {
 				buttonPosition={isMobile ? 'bottom' : 'side'}
 				slidesPerView={1}
 				loop
+				images={images}
 				spaceBetween={isMobile ? 10 : 20}
 				breakpoints={{
 					320: { slidesPerView: 1 },

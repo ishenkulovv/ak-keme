@@ -7,6 +7,23 @@
 	position: relative;
 }
 
+.ph_block {
+	top: 300px;
+	z-index: 3;
+	transition: all 0.7s;
+}
+
+.ph_block.animated {
+	top: 120px;
+	opacity: 1;
+}
+
+.ph_block.leave {
+	top: 140px;
+	opacity: 0;
+	transform: scale(0.95);
+}
+
 #block_1 {
 	opacity: 1;
 	z-index: 2;

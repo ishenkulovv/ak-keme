@@ -31,7 +31,6 @@ const optionsLang = [
 
 export default async function Home() {
 	const data = await fetchData();
-	console.log(data);
 	return (
 		<div className={styles.page}>
 			<Navigation options={optionsLang} data={data.translations} lang='kg' />
@@ -42,13 +41,19 @@ export default async function Home() {
 			<GeneralPlan data={data.geoplan} lang='kg' />
 			<Infrastructure data={data.infrastructure} lang='kg' />
 			<Apartments />
-			<Backyards />
-			<Approach />
-			<Parking />
+			<Backyards data={data.yard} lang='kg' />
+			<Approach data={data.entrance} lang='kg' />
+			<Parking data={data.parking} lang='kg' />
 			<ConstructionProgress />
-			<Documentations />
-			<Contact />
-			<Footer />
+			<Documentations
+				data={{
+					documentations: [...data.documentations],
+					...data.translations,
+				}}
+				lang='kg'
+			/>
+			<Contact data={{ ...data.translations, ...data.contact }} lang='kg' />
+			<Footer data={{ ...data.translations, ...data.contact }} lang='kg' />
 		</div>
 	);
 }
