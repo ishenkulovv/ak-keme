@@ -41,13 +41,23 @@ export default async function Home() {
 			<GeneralPlan data={data.geoplan} />
 			<Infrastructure data={data.infrastructure} />
 			<Apartments />
-			<Backyards />
-			<Approach />
-			<Parking />
-			<ConstructionProgress />
-			<Documentations />
-			<Contact />
-			<Footer />
+			<Backyards data={data.yard} />
+			<Approach data={data.entrance} />
+			<Parking data={data.parking} />
+			<ConstructionProgress
+				data={{
+					...data.translations,
+					construction_progresses: data.construction_progresses,
+				}}
+			/>
+			<Documentations
+				data={{
+					documentations: [...data.documentations],
+					...data.translations,
+				}}
+			/>
+			<Contact data={{ ...data.translations, ...data.contact }} />
+			<Footer data={{ ...data.translations, ...data.contact }} />
 		</div>
 	);
 }

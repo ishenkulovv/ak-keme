@@ -35,6 +35,18 @@
 	margin-top: 34px;
 }
 
+.date {
+	font-family: Manrope;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 150%;
+	letter-spacing: 0%;
+	vertical-align: middle;
+	color: var(--text-gray);
+	margin-top: 50px;
+	text-align: center;
+}
+
 @media (max-width: 500px) {
 	.title {
 		font-weight: 500;

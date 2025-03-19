@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import React from 'react';
@@ -58,18 +59,18 @@ const defaultOptions = [
 ];
 
 interface SelectOptions {
-	options: {
-		value: string;
-		label: string;
-	}[];
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	options: any;
 	onChange?: (value: string) => void;
 	className?: string;
+	lang?: 'ru' | 'kg';
 }
 
 function Select({
 	options = defaultOptions,
 	onChange,
 	className,
+	lang = 'ru',
 }: SelectOptions) {
 	const [open, setOpen] = React.useState(false);
 	const [value, setValue] = React.useState(options[0]);
@@ -80,7 +81,9 @@ function Select({
 				className={clsx(styles.content, className ? className : '')}
 				onClick={() => setOpen(!open)}
 			>
-				<div className={styles.value}>{value.label}</div>
+				<div className={styles.value}>
+					{value?.deadline_text ? value.label[lang] : value.label}
+				</div>
 				<Image
 					src='/icons/arrow_dropdown.svg'
 					alt='Arrow'
@@ -98,20 +101,25 @@ function Select({
 						transition={{ duration: 0.3, ease: 'easeOut' }}
 						className={clsx(styles.dropdown)}
 					>
-						{options?.map(option => (
+						{options?.map((option: any, index: number) => (
 							<div
-								key={option.value}
+								key={index}
 								className={clsx(
 									styles.item,
 									value.value === option.value && styles.active
 								)}
 								onClick={() => {
 									setValue(option);
-									onChange?.(option.value);
+									if (option?.deadline_text) {
+										onChange?.(option);
+									} else {
+										onChange?.(option.value);
+									}
+
 									setOpen(false);
 								}}
 							>
-								{option.label}
+								{option?.deadline_text ? option.label[lang] : option.label}
 							</div>
 						))}
 					</motion.div>

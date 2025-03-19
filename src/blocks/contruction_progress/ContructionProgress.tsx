@@ -1,41 +1,49 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+'use client';
+
+import React from 'react';
 import global from '@/src/styles/global_styles.module.css';
 import styles from './contruction_progress.module.css';
 import clsx from 'clsx';
 import { Select } from '@/src/ui';
+import { convertYouTubeLinkToEmbed } from '@/src/utils/convertYoutubeLinkToEmbed';
 
-const options = [
-	{
-		value: 'january',
-		label: 'Январь 2025',
-	},
-	{
-		value: 'february',
-		label: 'Февраль 2025',
-	},
-	{
-		value: 'march',
-		label: 'Март 2025',
-	},
-];
+function ConstructionProgress({
+	data,
+	lang = 'ru',
+}: {
+	data: any;
+	lang?: 'ru' | 'kg';
+}) {
+	const [datas, setDatas] = React.useState(data?.construction_progresses[0]);
 
-function ConstructionProgress() {
+	const handleSelect = (value: any) => {
+		setDatas(value);
+	};
 	return (
 		<section className={styles.main}>
 			<div className={clsx(global.container, styles.container)}>
-				<h2 className={styles.title}>Ход строительства </h2>
+				<h2 className={styles.title}>
+					{data.footer_construction_progress[lang]}
+				</h2>
 				<div className={styles.content}>
 					<div className={styles.select}>
-						<Select options={options} />
+						<Select
+							options={data?.construction_progresses}
+							lang={lang}
+							onChange={handleSelect}
+						/>
 					</div>
 
 					<div className={styles.video}>
 						<iframe
 							width='560'
 							height='315'
-							src='https://www.youtube.com/embed/T6eK-2OQtew?si=Qe95V1juhvPXMr4B'
+							src={convertYouTubeLinkToEmbed(datas.value) as string}
 							title='YouTube video player'
 						></iframe>
 					</div>
+					<div className={styles.date}>{datas?.deadline_text[lang]}</div>
 				</div>
 			</div>
 		</section>

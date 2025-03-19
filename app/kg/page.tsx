@@ -44,7 +44,13 @@ export default async function Home() {
 			<Backyards data={data.yard} lang='kg' />
 			<Approach data={data.entrance} lang='kg' />
 			<Parking data={data.parking} lang='kg' />
-			<ConstructionProgress />
+			<ConstructionProgress
+				data={{
+					...data.translations,
+					construction_progresses: data.construction_progresses,
+				}}
+				lang='kg'
+			/>
 			<Documentations
 				data={{
 					documentations: [...data.documentations],
