@@ -9,15 +9,6 @@ import { Navigation } from 'swiper/modules';
 import styles from './backyards.module.css';
 import './styles.css';
 
-const array = [
-	'/images/image-1.png',
-	'/images/infast_3.png',
-	'/images/infast_4.png',
-	'/images/image-1.png',
-	'/images/infast_3.png',
-	'/images/infast_4.png',
-];
-
 function Slider({ images }: { images: string[] }) {
 	return (
 		<>
