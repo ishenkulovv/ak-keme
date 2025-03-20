@@ -1,12 +1,16 @@
 export const fetchDataTransform = async () => {
-	const res = await fetch('https://back.ak-keme.kg/api/content');
+	const res = await fetch('https://back.ak-keme.kg/api/content', {
+		cache: 'no-store', // 👈 Отключает кеширование
+	});
 	const posts = await res.json();
 
 	return transformData(posts);
 };
 
 export const fetchData = async () => {
-	const res = await fetch('https://back.ak-keme.kg/api/content');
+	const res = await fetch('https://back.ak-keme.kg/api/content', {
+		cache: 'no-store', // 👈 Отключает кеширование
+	});
 	const posts = await res.json();
 
 	return posts;
