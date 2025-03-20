@@ -7,11 +7,18 @@ interface IButtonProps {
 	children: string;
 	className?: string;
 	onClick?: () => void;
+	type?: 'button' | 'submit' | 'reset';
 }
 
-function Button({ children, className, onClick }: IButtonProps) {
+function Button({
+	children,
+	className,
+	onClick,
+	type = 'button',
+}: IButtonProps) {
 	return (
 		<button
+			type={type}
 			onClick={() => onClick?.()}
 			className={clsx(styles.button, className)}
 		>

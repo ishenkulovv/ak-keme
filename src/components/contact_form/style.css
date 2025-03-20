@@ -1,0 +1,21 @@
+.phone_input {
+	width: 100% !important;
+	border: none !important;
+	outline: none !important;
+	border-bottom: 1px solid rgba(216, 218, 222, 1) !important;
+	transition: all 0.3s !important;
+	font-family: Manrope !important;
+	font-weight: 500 !important;
+	font-size: 14px !important;
+	line-height: 21px !important;
+	letter-spacing: 0% !important;
+}
+
+.phone_container {
+	margin-top: 20px;
+}
+
+.phone_button {
+	background-color: transparent !important;
+	border: none !important;
+}

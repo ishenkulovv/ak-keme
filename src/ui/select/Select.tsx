@@ -76,7 +76,7 @@ function Select({
 	const [value, setValue] = React.useState(options[0]);
 
 	return (
-		<div className={styles.wrapper}>
+		<div className={styles.wrapper} data-lenis-ignore>
 			<div
 				className={clsx(styles.content, className ? className : '')}
 				onClick={() => setOpen(!open)}
