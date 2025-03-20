@@ -31,6 +31,9 @@ const optionsLang = [
 
 export default async function Home() {
 	const data = await fetchData();
+
+	console.log(data.translations, 'data.translations');
+
 	return (
 		<div className={styles.page}>
 			<Navigation options={optionsLang} data={data.translations} lang='kg' />
