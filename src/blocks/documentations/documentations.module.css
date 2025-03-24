@@ -75,6 +75,33 @@
 	cursor: pointer;
 }
 
+.modal {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 998;
+}
+
+.modal_bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal_content {
+	width: 85%;
+	height: 80%;
+}
+
 @media (max-width: 950px) {
 	.documents {
 		display: grid;
