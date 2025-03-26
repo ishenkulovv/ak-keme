@@ -9,6 +9,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import styles from './infrastructure.module.css';
+import './style.css';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function Slider({ data, lang = 'ru' }: { data: any; lang?: 'ru' | 'kg' }) {
