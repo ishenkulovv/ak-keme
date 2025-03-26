@@ -5,9 +5,8 @@ import styles from './infrastructure.module.css';
 import clsx from 'clsx';
 import Slider from './Slider';
 import Model from './Model';
-import ImageFirst from './ImageFirst';
-import ImageSecond from './ImageSecond';
 import { formattedText } from '@/src/utils/formattedText';
+import { MapComponent } from '@/src/components/map/Map';
 
 function Infrastructure({
 	data,
@@ -28,12 +27,9 @@ function Infrastructure({
 					}}
 				/>
 				{/* TODO: image translate */}
-				<ImageFirst />
+				<MapComponent />
 			</section>
 			<section className={styles.main}>
-				{/* TODO: translate */}
-				<h2 className={styles.title}>Локация курорта</h2>
-				<ImageSecond />
 				<div className={clsx(global_styles.container, global_styles.mt_60)}>
 					<div className={styles.block}>
 						<div className={styles.block_left}>
