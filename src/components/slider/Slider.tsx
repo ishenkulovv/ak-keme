@@ -6,6 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import Image from 'next/image';
 import styles from './slider.module.css';
+import './style.css';
 import clsx from 'clsx';
 import { Navigation } from 'swiper/modules';
 
