@@ -56,7 +56,6 @@ function Slider({ data, lang = 'ru' }: { data: any; lang?: 'ru' | 'kg' }) {
 					nextEl: '#apartments-custom-next',
 					prevEl: '#apartments-custom-prev',
 				}}
-				pagination={{ clickable: true }}
 				loop={true}
 				breakpoints={{
 					320: { slidesPerView: 1.1 },
