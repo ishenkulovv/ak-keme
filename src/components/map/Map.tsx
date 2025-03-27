@@ -1,12 +1,15 @@
 'use client';
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { load } from '@2gis/mapgl';
 import { useEffect } from 'react';
 import { MapWrapper } from './MapWrapper';
 import { Map } from '@2gis/mapgl/types';
+import { useLenis } from 'lenis/react';
 
 export const MapComponent = () => {
+	const mapRef = useRef<HTMLDivElement | null>(null);
+	const lenis = useLenis();
 	useEffect(() => {
 		let map: Map;
 		load().then(mapglAPI => {
@@ -17,14 +20,42 @@ export const MapComponent = () => {
 			});
 		});
 
-		// Удаляем карту при размонтировании компонента
 		return () => map && map.destroy();
 	}, []);
+
+	useEffect(() => {
+		const mapElement = mapRef.current;
+
+		const disableLenisScroll = () => {
+			if (lenis) {
+				lenis.stop();
+			}
+		};
+
+		const enableLenisScroll = () => {
+			if (lenis) {
+				lenis.start();
+			}
+		};
+
+		if (mapElement) {
+			mapElement.addEventListener('mouseenter', disableLenisScroll);
+			mapElement.addEventListener('mouseleave', enableLenisScroll);
+		}
+
+		return () => {
+			if (mapElement) {
+				mapElement.removeEventListener('mouseenter', disableLenisScroll);
+				mapElement.removeEventListener('mouseleave', enableLenisScroll);
+			}
+		};
+	}, [lenis]);
 
 	return (
 		<div
 			style={{ width: '100%', height: '630px', marginTop: 60 }}
 			data-lenis-ignor
+			ref={mapRef}
 		>
 			<MapWrapper />
 		</div>
